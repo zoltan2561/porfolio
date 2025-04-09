@@ -1,0 +1,378 @@
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow-x: hidden;
+      font-family: 'Courier New', Courier, monospace;
+      background: black;
+      color: white;
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.85);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem 0.5rem;
+        z-index: 2;
+        box-shadow: 0 0 10px #0f0;
+        backdrop-filter: blur(4px);
+      }
+      
+      nav a {
+        color: #0f0;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+      
+      nav a:hover {
+        background-color: rgba(0, 255, 0, 0.1);
+        border-color: #0f0;
+        box-shadow: 0 0 5px #0f0;
+        color: #00ffee;
+      }
+      
+      /* Mobil optimalizálás */
+      @media (max-width: 600px) {
+        nav {
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5rem;
+        }
+      
+        nav a {
+          width: 80%;
+          text-align: center;
+          font-size: 1rem;
+          padding: 0.7rem;
+          border-radius: 12px;
+        }
+      }
+      
+      .nav-container {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 2;
+        background-color: rgba(0, 0, 0, 0.85);
+        box-shadow: 0 0 10px #0f0;
+        backdrop-filter: blur(4px);
+      }
+      
+      .hamburger {
+        display: none;
+        font-size: 2rem;
+        padding: 1rem;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+      .hamburger:hover {
+        transform: scale(1.2);
+      }
+      
+      
+      #main-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem 0.5rem;
+      }
+      
+      @media (max-width: 600px) {
+        .hamburger {
+          display: block;
+        }
+      
+        #main-nav {
+          display: none;
+          flex-direction: column;
+          align-items: center;
+        }
+      
+        #main-nav.active {
+          display: flex;
+        }
+      
+        #main-nav a {
+          width: 100%;
+          padding: 1rem;
+          font-size: 1rem;
+          border-bottom: 1px solid #0f0;
+          text-align: center;
+        }
+      }
+      
+    .foreground {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding-top: 80px;
+      text-align: center;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .foreground img {
+      width: 150px;
+      height: auto;
+      border-radius: 50%;
+      filter: grayscale(100%);
+      margin-bottom: 1rem;
+    }
+
+    .foreground h1 {
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    .foreground p {
+      font-size: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .cv-button {
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #0f0;
+      background-color: transparent;
+      border: 2px solid #0f0;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .cv-button:hover {
+      background-color: #0f0;
+      color: black;
+    }
+
+    section {
+      position: relative;
+      z-index: 1;
+      padding: 3rem 1rem;
+      background-color: rgba(0, 0, 0, 0.85);
+    }
+
+    section h2 {
+      color: #00ffee;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .services, .projects {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .service, .project {
+      background-color: rgba(0, 0, 0, 0.6);
+      border: 1px solid #0f0;
+      border-radius: 10px;
+      padding: 1rem;
+      width: 280px;
+      text-align: center;
+    }
+
+    .service img, .project img {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 0.5rem;
+    }
+
+    .service h3, .project h3 {
+      color: #0f0;
+      margin: 0.5rem 0;
+    }
+
+    .service p, .project p {
+      font-size: 0.95rem;
+    }
+
+    .project a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #00ffee;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .foreground h1 {
+        font-size: 1.6rem;
+      }
+      .foreground p {
+        font-size: 0.95rem;
+      }
+      .cv-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+      }
+      .service, .project {
+        width: 90%;
+      }
+    }
+/* Szebb bemutatkozó szöveg */
+.foreground p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 1rem auto 0 auto;
+    padding: 0 1rem;
+  }
+  
+  /* Dinamikusabb gomb */
+  .cta-button {
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #0f0;
+    background-color: transparent;
+    border: 2px solid #0f0;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  .cta-button:hover {
+    background-color: #0f0;
+    color: black;
+    box-shadow: 0 0 10px #0f0, 0 0 20px #0f0;
+  }
+  
+  /* Nagyobb profilkép + hover effekttel */
+  .foreground img {
+    width: 220px;
+    height: auto;
+    border-radius: 50%;
+    filter: grayscale(100%);
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 0 10px #000;
+  }
+  .foreground img:hover {
+    filter: grayscale(0%) brightness(1.1);
+    box-shadow: 0 0 20px #0f0, 0 0 40px #0f0;
+  }
+  #kapcsolat {
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+  
+  .contact-info {
+    color: white;
+    margin-bottom: 2rem;
+  }
+  
+  .contact-info p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+  
+  .contact-info a {
+    color: #00ffee;
+    text-decoration: none;
+  }
+  
+  .contact-info a:hover {
+    text-decoration: underline;
+    color: #0f0;
+  }
+  
+  .contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.8rem;
+    font-family: monospace;
+    background-color: #000;
+    color: #0f0;
+    border: 1px solid #0f0;
+    border-radius: 5px;
+    resize: vertical;
+  }
+  
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder {
+    color: #0f0a;
+  }
+  
+  .contact-form button {
+    padding: 0.8rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000;
+    background-color: #0f0;
+    border: 2px solid #0f0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .contact-form button:hover {
+    background-color: black;
+    color: #0f0;
+    box-shadow: 0 0 10px #0f0;
+  }
+  .form-success {
+    color: #0f0;
+    font-weight: bold;
+    background: rgba(0, 255, 0, 0.1);
+    padding: 1rem;
+    border: 1px solid #0f0;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+  }
+  
+  .form-error {
+    color: red;
+    font-weight: bold;
+    background: rgba(255, 0, 0, 0.1);
+    padding: 1rem;
+    border: 1px solid red;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+  }
+  
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  

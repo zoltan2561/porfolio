@@ -6,219 +6,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IT Portfólió - Matrix Style</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow-x: hidden;
-      font-family: 'Courier New', Courier, monospace;
-      background: black;
-      color: white;
-    }
-
-    canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 0;
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      padding: 1rem 0.5rem;
-      z-index: 2;
-    }
-
-    nav a {
-      color: #0f0;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-      font-size: 0.95rem;
-    }
-
-    nav a:hover {
-      color: #00ffee;
-    }
-
-    .foreground {
-      position: relative;
-      z-index: 1;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding-top: 80px;
-      text-align: center;
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
-
-    .foreground img {
-      width: 150px;
-      height: auto;
-      border-radius: 50%;
-      filter: grayscale(100%);
-      margin-bottom: 1rem;
-    }
-
-    .foreground h1 {
-      font-size: 2rem;
-      margin: 0;
-    }
-
-    .foreground p {
-      font-size: 1rem;
-      margin-top: 0.5rem;
-    }
-
-    .cv-button {
-      margin-top: 1.5rem;
-      padding: 0.8rem 1.5rem;
-      font-size: 1rem;
-      font-weight: bold;
-      color: #0f0;
-      background-color: transparent;
-      border: 2px solid #0f0;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: all 0.3s;
-    }
-
-    .cv-button:hover {
-      background-color: #0f0;
-      color: black;
-    }
-
-    section {
-      position: relative;
-      z-index: 1;
-      padding: 3rem 1rem;
-      background-color: rgba(0, 0, 0, 0.85);
-    }
-
-    section h2 {
-      color: #00ffee;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .services, .projects {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .service, .project {
-      background-color: rgba(0, 0, 0, 0.6);
-      border: 1px solid #0f0;
-      border-radius: 10px;
-      padding: 1rem;
-      width: 280px;
-      text-align: center;
-    }
-
-    .service img, .project img {
-      width: 48px;
-      height: 48px;
-      margin-bottom: 0.5rem;
-    }
-
-    .service h3, .project h3 {
-      color: #0f0;
-      margin: 0.5rem 0;
-    }
-
-    .service p, .project p {
-      font-size: 0.95rem;
-    }
-
-    .project a {
-      display: inline-block;
-      margin-top: 0.5rem;
-      color: #00ffee;
-      text-decoration: underline;
-    }
-
-    @media (max-width: 600px) {
-      .foreground h1 {
-        font-size: 1.6rem;
-      }
-      .foreground p {
-        font-size: 0.95rem;
-      }
-      .cv-button {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.9rem;
-      }
-      .service, .project {
-        width: 90%;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <canvas id="matrix"></canvas>
 
-  <nav>
-    <a href="#rolam">Rólam</a>
-    <a href="#szolgaltatasok">Szolgáltatások</a>
-    <a href="#projektek">Projektek</a>
-    <a href="#kapcsolat">Kapcsolat</a>
-  </nav>
+  <div class="nav-container">
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <nav id="main-nav">
+      <a href="#rolam">Rólam</a>
+      <a href="#szolgaltatasok">Szolgáltatások</a>
+      <a href="#projektek">Projektek</a>
+      <a href="#kapcsolat">Kapcsolat</a>
+    </nav>
+  </div>
 
   <div class="foreground" id="rolam">
-    <img src="profile-bw.jpg" alt="Profilkép">
+    <img src="icons/profile-bw.jpg" alt="Profilkép">
     <h1>Üdvözöllek a Weboldalamon</h1>
-    <p>A nevem Papp Zoltán, IT specialista – Minden, ami informatika!</p>
-    <a href="cv/PappZoltan-CV.pdf" class="cv-button" download>Önéletrajz letöltése</a>
+    <p>A nevem Papp Zoltán, IT specialista. Több mint 10 éve foglalkozom számítógépes rendszerekkel, szoftverfejlesztéssel, weboldalakkal, valamint hardveres és hálózati megoldásokkal. Célom, hogy ügyfeleimnek teljes körű és hatékony IT támogatást nyújtsak.</p>
+    <a href="#kapcsolat" class="cta-button">Lépj kapcsolatba velem</a>
   </div>
 
   <section id="szolgaltatasok">
     <h2>Szolgáltatások</h2>
     <div class="services">
       <div class="service">
-        <img src="icons/repair.png" alt="Szerviz ikon">
-        <h3>Számítógépes szerviz</h3>
+        <h3>🛠️ Számítógépes szerviz</h3>
         <p>Hardver hibák javítása, gépépítés, tisztítás, hűtés optimalizálás.</p>
       </div>
       <div class="service">
-        <img src="icons/software.png" alt="Szoftver ikon">
-        <h3>Szoftver telepítés</h3>
+        <h3>💽 Szoftver telepítés</h3>
         <p>Windows, Linux, driverek, antivírus, programbeállítások.</p>
       </div>
       <div class="service">
-        <img src="icons/network.png" alt="Hálózat ikon">
-        <h3>Hálózatépítés</h3>
+        <h3>🌐 Hálózatépítés</h3>
         <p>Wi-Fi és LAN hálózat, router konfiguráció, hibakeresés.</p>
       </div>
       <div class="service">
-        <img src="icons/data.png" alt="Adatmentés ikon">
-        <h3>Adatmentés</h3>
+        <h3>💾 Adatmentés</h3>
         <p>Mentés sérült HDD-ről, USB kulcsokról, backup rendszerek.</p>
       </div>
       <div class="service">
-        <img src="icons/code.png" alt="Fejlesztés ikon">
-        <h3>Programozás</h3>
+        <h3>💻 Programozás</h3>
         <p>Weboldalak, webshopok, PHP, Java, Python alkalmazások.</p>
       </div>
       <div class="service">
-        <img src="icons/security.png" alt="Biztonság ikon">
-        <h3>IT tanácsadás</h3>
+        <h3>🔐 IT tanácsadás</h3>
         <p>Konzultáció, kiberbiztonság, infrastruktúra tervezés cégeknek.</p>
       </div>
     </div>
@@ -228,61 +63,52 @@
     <h2>Projektek</h2>
     <div class="projects">
       <div class="project">
-        <img src="icons/web.png" alt="Webprojekt">
-        <h3>GyrosCity</h3>
+        <h3>🌯 GyrosCity</h3>
         <p>GyrosCity.eu – Gyorsétterem weboldal, rendelési funkcióval.</p>
         <a href="https://gyroscity.eu" target="_blank">Weboldal megtekintése</a>
       </div>
       <div class="project">
-        <img src="icons/web.png" alt="Webprojekt">
-        <h3>ZCutzBarber</h3>
+        <h3>💈 ZCutzBarber</h3>
         <p>Zcutzbarber.com – Fodrász weboldal időpontfoglalással és galériával.</p>
         <a href="https://zcutzbarber.com" target="_blank">Weboldal megtekintése</a>
       </div>
       <div class="project">
-        <img src="icons/gear.png" alt="IT projekt">
-        <h3>Hardveres megoldások</h3>
+        <h3>🧰 Hardveres megoldások</h3>
         <p>Számtalan sikeres hardveres fejlesztés és javítás (pl. gépépítés, diagnosztika, tuning).</p>
       </div>
       <div class="project">
-        <img src="icons/tech.png" alt="IT projekt">
-        <h3>Informatikai támogatás</h3>
+        <h3>🧠 Informatikai támogatás</h3>
         <p>Komplex rendszerek telepítése, konfigurálása és karbantartása magán- és céges ügyfeleknek.</p>
       </div>
     </div>
   </section>
 
-  <script>
-    // Matrix háttér animáció
-    const canvas = document.getElementById("matrix");
-    const ctx = canvas.getContext("2d");
+  <section id="kapcsolat">
+    <h2>Kapcsolat</h2>
+    <div class="contact-info">
+      <p>📧 <strong>E-mail:</strong> <a href="mailto:zoltan@example.com">zoltan@example.com</a></p>
+      <p>📱 <strong>Telefon:</strong> <a href="tel:+36201234567">+36 20 123 4567</a></p>
+      <p>💼 <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/zoltan" target="_blank">linkedin.com/in/zoltan</a></p>
+      <p>📷 <strong>Instagram:</strong> <a href="https://instagram.com/zoltan" target="_blank">@zoltan</a></p>
+      <p>📘 <strong>Facebook:</strong> <a href="https://facebook.com/zoltan" target="_blank">facebook.com/zoltan</a></p>
+      <?php if (isset($_GET['success'])): ?>
+  <p class="form-success">✅ Köszönöm! Az üzeneted megérkezett.</p>
+<?php elseif (isset($_GET['error'])): ?>
+  <p class="form-error">❌ Hiba történt az üzenetküldés során. Próbáld újra!</p>
+<?php endif; ?>
 
-    canvas.height = window.innerHeight;
-    canvas.width = window.innerWidth;
+    </div>
 
-    const letters = "01";
-    const fontSize = 14;
-    const columns = canvas.width / fontSize;
-    const drops = [];
+    <form class="contact-form" method="POST" action="send.php">
 
-    for (let x = 0; x < columns; x++) drops[x] = 1;
+      <h3>📨 Lépj kapcsolatba velem</h3>
+      <input type="text" name="name" placeholder="Név" required>
+      <input type="email" name="email" placeholder="E-mail" required>
+      <textarea name="message" rows="5" placeholder="Üzenet..." required></textarea>
+      <button type="submit">📩 Küldés</button>
+    </form>
+  </section>
 
-    function draw() {
-      ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "#0F0";
-      ctx.font = fontSize + "px monospace";
-      for (let i = 0; i < drops.length; i++) {
-        const text = letters.charAt(Math.floor(Math.random() * letters.length));
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
-        }
-        drops[i]++;
-      }
-    }
-    setInterval(draw, 33);
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
