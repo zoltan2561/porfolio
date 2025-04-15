@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IT Portfólió - Matrix Style</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="Style.css">
 </head>
 <body>
 
@@ -18,16 +18,21 @@
       <a href="#rolam">Rólam</a>
       <a href="#szolgaltatasok">Szolgáltatások</a>
       <a href="#projektek">Projektek</a>
+      <a href="#technologiak">Tech Stackem</a>
       <a href="#kapcsolat">Kapcsolat</a>
     </nav>
   </div>
+
 
   <div class="foreground" id="rolam">
     <img src="icons/profile-bw.jpg" alt="Profilkép">
     <h1>Üdvözöllek a Weboldalamon</h1>
     <p>A nevem Papp Zoltán, IT specialista. Több mint 10 éve foglalkozom számítógépes rendszerekkel, szoftverfejlesztéssel, weboldalakkal, valamint hardveres és hálózati megoldásokkal. Célom, hogy ügyfeleimnek teljes körű és hatékony IT támogatást nyújtsak.</p>
     <a href="#kapcsolat" class="cta-button">Lépj kapcsolatba velem</a>
+    <a href="#technologiak" class="cta-button">💻 Nézd meg a technikai tudásom</a>
+
   </div>
+
 
   <section id="szolgaltatasok">
     <h2>Szolgáltatások</h2>
@@ -59,6 +64,7 @@
     </div>
   </section>
 
+
   <section id="projektek">
     <h2>Projektek</h2>
     <div class="projects">
@@ -81,7 +87,13 @@
         <p>Komplex rendszerek telepítése, konfigurálása és karbantartása magán- és céges ügyfeleknek.</p>
       </div>
     </div>
-  </section>
+    </section>
+
+
+    <?php include 'skills.php'; ?>
+
+
+
 
   <section id="kapcsolat">
     <h2>Kapcsolat</h2>
@@ -99,6 +111,7 @@
 
     </div>
 
+
     <form class="contact-form" method="POST" action="send.php">
 
       <h3>📨 Lépj kapcsolatba velem</h3>
@@ -111,4 +124,4 @@
 
   <script src="script.js"></script>
 </body>
-</html>
+</html>  

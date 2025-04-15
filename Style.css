@@ -7,7 +7,10 @@
       background: black;
       color: white;
     }
-
+    html {
+      scroll-behavior: smooth;
+    }
+    
     canvas {
       position: absolute;
       top: 0;
@@ -374,5 +377,77 @@
   .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  /*skills*/
+  #technologiak {
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #00ffcc;
+    padding: 4rem 2rem;
+    margin-top: 2rem;
+    border-top: 2px solid #00ffcc;
+    border-bottom: 2px solid #00ffcc;
+  }
+  #technologiak {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #00ffcc;
+    border-top: 2px solid #00ffcc;
+    border-bottom: 2px solid #00ffcc;
+    box-shadow: 0 0 30px rgba(0, 255, 204, 0.2);
+    border-radius: 10px;
+  }
+  
+  #technologiak h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #00ffcc;
+  }
+  
+  #technologiak h3 {
+    font-size: 1.4rem;
+    color: #66ffe0;
+    margin-top: 2rem;
+    border-left: 4px solid #00ffcc;
+    padding-left: 0.5rem;
+  }
+  
+  #technologiak ul {
+    list-style-type: '➤ ';
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  #technologiak ul li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #ccffef;
+    transition: transform 0.2s ease;
+  }
+  
+  #technologiak ul li:hover {
+    transform: translateX(5px);
+    color: #ffffff;
+  }
+  
+  @media screen and (max-width: 768px) {
+    #technologiak {
+      padding: 2rem 1rem;
+    }
+  
+    #technologiak h2 {
+      font-size: 1.6rem;
+    }
+  
+    #technologiak h3 {
+      font-size: 1.2rem;
+    }
+  
+    #technologiak ul li {
+      font-size: 0.95rem;
+    }
   }
   
