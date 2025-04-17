@@ -82,3 +82,65 @@ setTimeout(() => {
   if (success) success.style.display = 'none';
   if (error) error.style.display = 'none';
 }, 5000); // 5 másodperc
+
+
+
+
+
+// ✅ Typewriter kezdőértékek
+let lineIndex = 0;
+let charIndex = 0;
+const speed = 20;
+const typewriterEl = document.getElementById("typewriter");
+
+// ✅ Typewriter logika
+function typeLine() {
+  if (lineIndex < typewriterLines.length) {
+    const currentLine = typewriterLines[lineIndex];
+    if (charIndex < currentLine.length) {
+      typewriterEl.textContent += currentLine.charAt(charIndex);
+      charIndex++;
+      setTimeout(typeLine, speed);
+    } else {
+      typewriterEl.textContent += "\n";
+      lineIndex++;
+      charIndex = 0;
+      setTimeout(typeLine, 400);
+    }
+  }
+}
+
+// ✅ Preloader logika
+let preloadIndex = 0;
+let preloadChar = 0;
+const preloaderEl = document.getElementById("preloader-text");
+
+function typePreloader() {
+  if (preloadIndex < preloaderLines.length) {
+    const line = preloaderLines[preloadIndex];
+    if (preloadChar < line.length) {
+      preloaderEl.textContent += line.charAt(preloadChar);
+      preloadChar++;
+      setTimeout(typePreloader, 40);
+    } else {
+      preloaderEl.textContent += "\n";
+      preloadIndex++;
+      preloadChar = 0;
+      setTimeout(typePreloader, 300);
+    }
+  } else {
+    // Preloader vége → elrejtés, majd typewriter indítás
+    setTimeout(() => {
+      document.getElementById("preloader").style.opacity = '0';
+      setTimeout(() => {
+        document.getElementById("preloader").style.display = 'none';
+        typeLine(); // 💥 typewriter csak most indul!
+      }, 1000);
+    }, 1000);
+  }
+}
+
+// ✅ Elsőként csak a preloader indul
+window.addEventListener('load', () => {
+  typePreloader();
+});
