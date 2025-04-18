@@ -26,6 +26,7 @@ if (isset($_GET['lang']) && in_array($_GET['lang'], ['hu', 'en'])) {
   <link rel="stylesheet" href="Style.css">
 </head>
 <body>
+  
 <div id="preloader">
   <pre id="preloader-text"></pre>
 </div>
@@ -52,7 +53,6 @@ if (isset($_GET['lang']) && in_array($_GET['lang'], ['hu', 'en'])) {
 </nav>
 
   </div>
-
   <div class="typewriter-container fade-in">
   <pre id="typewriter"></pre>
 </div>
@@ -79,7 +79,7 @@ if (isset($_GET['lang']) && in_array($_GET['lang'], ['hu', 'en'])) {
   <div class="services">
     <div class="service">
       <h3>🛠️ <?php echo ($lang === 'hu') ? 'Számítógépes szerviz' : 'Computer Repair'; ?></h3>
-      <p><?php echo ($lang === 'hu') ? 'Hardver hibák javítása, gépépítés, tisztítás, hűtés optimalizálás.' : 'Hardware troubleshooting, PC building, cleaning, cooling optimization.'; ?></p>
+      <p><?php echo ($lang === 'hu') ? 'Hardver hibák javítása, gépépítés, tisztítás,  optimalizálás.' : 'Hardware troubleshooting, PC building, cleaning,  optimization.'; ?></p>
     </div>
     <div class="service">
       <h3>💽 <?php echo ($lang === 'hu') ? 'Szoftver telepítés' : 'Software Installation'; ?></h3>
@@ -90,9 +90,14 @@ if (isset($_GET['lang']) && in_array($_GET['lang'], ['hu', 'en'])) {
       <p><?php echo ($lang === 'hu') ? 'Wi-Fi és LAN hálózat, router konfiguráció, hibakeresés.' : 'Wi-Fi and LAN setup, router configuration, troubleshooting.'; ?></p>
     </div>
     <div class="service">
-      <h3>💾 <?php echo ($lang === 'hu') ? 'Adatmentés' : 'Data Recovery'; ?></h3>
-      <p><?php echo ($lang === 'hu') ? 'Mentés sérült HDD-ről, USB kulcsokról, backup rendszerek.' : 'Recovery from damaged HDDs, USB drives, backup systems.'; ?></p>
-    </div>
+  <h3>📣 <?php echo ($lang === 'hu') ? 'Online jelenlét & kampánykezelés' : 'Online Presence & Campaigns'; ?></h3>
+  <p>
+    <?php echo ($lang === 'hu') 
+      ? 'Google Analytics, Facebook / Insta hirdetések, webes statisztika és célzott kampányok kezelése.' 
+      : 'Google Analytics, Facebook / Insta ads, web stats and targeted campaign management.'; ?>
+  </p>
+</div>
+
     <div class="service">
       <h3>💻 <?php echo ($lang === 'hu') ? 'Programozás' : 'Programming'; ?></h3>
       <p><?php echo ($lang === 'hu') ? 'Weboldalak, webshopok, PHP, Java, Python alkalmazások.' : 'Websites, e-shops, PHP, Java, Python applications.'; ?></p>
@@ -146,13 +151,16 @@ if (isset($_GET['lang']) && in_array($_GET['lang'], ['hu', 'en'])) {
 
 
 <section id="kapcsolat">
+
   <h2><?php echo ($lang === 'hu') ? 'Kapcsolat' : 'Contact'; ?></h2>
   <div class="contact-info">
-    <p>📧 <strong>E-mail:</strong> <a href="mailto:zoltan@example.com">zoltan@example.com</a></p>
-    <p>📱 <strong><?php echo ($lang === 'hu') ? 'Telefon:' : 'Phone:'; ?></strong> <a href="tel:+36201234567">+36 20 123 4567</a></p>
-    <p>💼 <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/zoltan" target="_blank">linkedin.com/in/zoltan</a></p>
-    <p>📷 <strong>Instagram:</strong> <a href="https://instagram.com/zoltan" target="_blank">@zoltan</a></p>
-    <p>📘 <strong>Facebook:</strong> <a href="https://facebook.com/zoltan" target="_blank">facebook.com/zoltan</a></p>
+    <p>📧 <strong>E-mail:</strong> <a href="mailto:pappzoltan6969@gmail.com">pappzoltan6969@gmail.com</a></p>
+    <p>📱 <strong><?php echo ($lang === 'hu') ? 'Telefon:' : 'Phone:'; ?></strong> <a href="tel:+36201234567">+36 20 468 3837</a></p>
+    <p>💼 <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/papp-zoltán-41a7a4172/" target="_blank">linkedin.com/in/zoltan</a></p>
+    <p>📷 <strong>Instagram:</strong> <a href="https://www.instagram.com/zoltan.ppp/" target="_blank">@zoltan.ppp</a></p>
+    <p>📘 <strong>Facebook:</strong> <a href="https://facebook.com/ztech20" target="_blank">facebook.com/ztech20</a></p>
+
+
     <?php if (isset($_GET['success'])): ?>
       <p class="form-success"><?php echo ($lang === 'hu') ? '✅ Köszönöm! Az üzeneted megérkezett.' : '✅ Thank you! Your message has been received.'; ?></p>
     <?php elseif (isset($_GET['error'])): ?>

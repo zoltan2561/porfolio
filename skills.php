@@ -91,4 +91,7 @@
     <li>Laravel mélyebb moduláris felépítése (Service layer, Repository pattern)</li>
     <li>CI/CD pipeline és automatikus tesztelés integrálása Docker környezetbe</li>
   </ul>
+
+  <a href="docs/Papp Zoltán CW.pdf" class="cv-button" download>📄 CW letöltése (PDF)</a>
+
 </section>

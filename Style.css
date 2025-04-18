@@ -511,20 +511,7 @@
     }
   }
   
-  .typewriter-container {
-    background-color: black;
-    border: 1px solid #00ffcc;
-    color: #00ffcc;
-    padding: 1.5rem;
-    margin: 2rem auto;
-    max-width: 700px;
-    font-family: monospace;
-    font-size: 1rem;
-    box-shadow: 0 0 15px #00ffcc33;
-    white-space: pre-wrap;
-    border-radius: 8px;
-  }
-  
+ 
   @keyframes blink {
     0%, 100% { border-color: transparent; }
     50% { border-color: #00ffcc; }
@@ -569,3 +556,36 @@
     50% { border-right: 2px solid transparent; }
   }
   
+ .typewriter-container {
+  margin-top: 110px; /* 🟢 ez tolja le ténylegesen a dobozt */
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #00ffcc;
+  font-family: monospace;
+  font-size: 1.1rem;
+  white-space: pre-wrap;
+  background-color: rgba(0, 0, 0, 0.75);
+  border: 1px solid #00ffcc;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 0 20px #00ffcc;
+}
+
+.cv-button {
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #0f0;
+  background-color: transparent;
+  border: 2px solid #0f0;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+.cv-button:hover {
+  background-color: #0f0;
+  color: black;
+}
+ 
