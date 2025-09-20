@@ -26,6 +26,7 @@ if (isset($_GET['lang']) && in_array($_GET['lang'], ['hu', 'en'])) {
   <link rel="stylesheet" href="Style.css">
 </head>
 <body>
+  
 <div id="preloader">
   <pre id="preloader-text"></pre>
 </div>
@@ -52,7 +53,6 @@ if (isset($_GET['lang']) && in_array($_GET['lang'], ['hu', 'en'])) {
 </nav>
 
   </div>
-
   <div class="typewriter-container fade-in">
   <pre id="typewriter"></pre>
 </div>
@@ -78,12 +78,17 @@ if (isset($_GET['lang']) && in_array($_GET['lang'], ['hu', 'en'])) {
   <div class="services">
 
     <div class="service">
+<<<<<<< HEAD
       <h3>💻 <?php echo ($lang === 'hu') ? 'Weboldalak és fejlesztés' : 'Websites & Development'; ?></h3>
       <p>
         <?php echo ($lang === 'hu') 
           ? 'Egyedi bemutatkozó weboldalak, névjegy oldalak és kisvállalkozásoknak készült webshopok – profi online jelenlét, ami ügyfeleket és bevételt hoz.'
           : 'Custom business card websites, personal portfolio pages, and small business e-shops – a professional online presence that attracts customers and generates revenue.'; ?>
       </p>
+=======
+      <h3>🛠️ <?php echo ($lang === 'hu') ? 'Számítógépes szerviz' : 'Computer Repair'; ?></h3>
+      <p><?php echo ($lang === 'hu') ? 'Hardver hibák javítása, gépépítés, tisztítás,  optimalizálás.' : 'Hardware troubleshooting, PC building, cleaning,  optimization.'; ?></p>
+>>>>>>> 64a0221124cb72de7fea5ba369b03060d8d8b59d
     </div>
 
     <div class="service">
@@ -105,6 +110,7 @@ if (isset($_GET['lang']) && in_array($_GET['lang'], ['hu', 'en'])) {
     </div>
 
     <div class="service">
+<<<<<<< HEAD
       <h3>📱 <?php echo ($lang === 'hu') ? 'Mobil szerviz' : 'Mobile Service'; ?></h3>
       <p>
         <?php echo ($lang === 'hu') 
@@ -112,6 +118,15 @@ if (isset($_GET['lang']) && in_array($_GET['lang'], ['hu', 'en'])) {
           : 'Screen and battery replacement, software updates and optimization, storage cleanup – making your phone feel brand new.'; ?>
       </p>
     </div>
+=======
+  <h3>📣 <?php echo ($lang === 'hu') ? 'Online jelenlét & kampánykezelés' : 'Online Presence & Campaigns'; ?></h3>
+  <p>
+    <?php echo ($lang === 'hu') 
+      ? 'Google Analytics, Facebook / Insta hirdetések, webes statisztika és célzott kampányok kezelése.' 
+      : 'Google Analytics, Facebook / Insta ads, web stats and targeted campaign management.'; ?>
+  </p>
+</div>
+>>>>>>> 64a0221124cb72de7fea5ba369b03060d8d8b59d
 
     <div class="service">
       <h3>💽 <?php echo ($lang === 'hu') ? 'Szoftver beállítás' : 'Software Setup'; ?></h3>
@@ -194,12 +209,23 @@ if (isset($_GET['lang']) && in_array($_GET['lang'], ['hu', 'en'])) {
 
 
 <section id="kapcsolat">
+
   <h2><?php echo ($lang === 'hu') ? 'Kapcsolat' : 'Contact'; ?></h2>
   <div class="contact-info">
+<<<<<<< HEAD
     <p>📧 <strong>E-mail:</strong> <a href="mailto:melo@pzoli.com">melo@pZoli.com</a></p>
     <p>💼 <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/papp-zoltán-41a7a4172/" target="_blank">linkedin.com/in/zoltan</a></p>
     <p>📷 <strong>Instagram:</strong> <a href="https://www.instagram.com/zoltan.ppp/#" target="_blank">@zoltan</a></p>
     <p>📘 <strong>Facebook:</strong> <a href="https://facebook.com/ztech20" target="_blank">facebook.com/zoltan</a></p>
+=======
+    <p>📧 <strong>E-mail:</strong> <a href="mailto:pappzoltan6969@gmail.com">pappzoltan6969@gmail.com</a></p>
+    <p>📱 <strong><?php echo ($lang === 'hu') ? 'Telefon:' : 'Phone:'; ?></strong> <a href="tel:+36201234567">+36 20 468 3837</a></p>
+    <p>💼 <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/papp-zoltán-41a7a4172/" target="_blank">linkedin.com/in/zoltan</a></p>
+    <p>📷 <strong>Instagram:</strong> <a href="https://www.instagram.com/zoltan.ppp/" target="_blank">@zoltan.ppp</a></p>
+    <p>📘 <strong>Facebook:</strong> <a href="https://facebook.com/ztech20" target="_blank">facebook.com/ztech20</a></p>
+
+
+>>>>>>> 64a0221124cb72de7fea5ba369b03060d8d8b59d
     <?php if (isset($_GET['success'])): ?>
       <p class="form-success"><?php echo ($lang === 'hu') ? '✅ Köszönöm! Az üzeneted megérkezett.' : '✅ Thank you! Your message has been received.'; ?></p>
     <?php elseif (isset($_GET['error'])): ?>

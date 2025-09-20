@@ -151,20 +151,3 @@ function typePreloader() {
 window.addEventListener('load', () => {
   typePreloader();
 });
-
-
-window.addEventListener('load', () => {
-  const urlParams = new URLSearchParams(window.location.search);
-  if (!urlParams.has('success') && !urlParams.has('error')) {
-    typePreloader(); // csak első látogatáskor
-  } else {
-    // Preload skip – csak typewriter fusson
-    document.getElementById("preloader").style.display = 'none';
-    typeLine();
-  }
-});
-
-
-
-
-
