@@ -55,7 +55,7 @@
 
   <h3>🧮 Tools & Environments</h3>
   <ul>
-    <li>Visual Studio Code, IntelliJ IDEA</li>
+    <li>Visual Studio Code, IntelliJ IDEA,PhpStorm</li>
     <li>Postman, FileZilla, WinSCP, TeamViewer (for remote support)</li>
     <li>phpMyAdmin, DBeaver, MySQL Workbench, Oracle SQL Developer</li>
     <li>Power BI, Power Automate</li>
@@ -83,4 +83,5 @@
     <li>Advanced Laravel (modular structure, Service/Repository patterns)</li>
     <li>CI/CD pipelines and automated testing in Docker environments</li>
   </ul>
+  <a href="docs/Papp Zoltán CW.pdf" class="cv-button" download>📄 Download CW (PDF)</a>
 </section>

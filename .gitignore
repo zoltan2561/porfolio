@@ -1,0 +1,16 @@
+# Ne kerüljön be a  config
+mail.config.php
+ip_log.json
+
+# Composer vendor könyvtár
+/vendor/
+
+/node_modules/
+
+/.env
+
+# OS / IDE fájlok
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

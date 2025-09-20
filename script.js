@@ -1,3 +1,7 @@
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}    
+    
     // Matrix háttér animáció
     const canvas = document.getElementById("matrix");
     const ctx = canvas.getContext("2d");
@@ -131,12 +135,15 @@ function typePreloader() {
   } else {
     // Preloader vége → elrejtés, majd typewriter indítás
     setTimeout(() => {
-      document.getElementById("preloader").style.opacity = '0';
+      document.getElementById("preloader").style.display = 'none';
       setTimeout(() => {
-        document.getElementById("preloader").style.display = 'none';
-        typeLine(); // 💥 typewriter csak most indul!
-      }, 1000);
+        window.scrollTo(0, 0);
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+        typeLine();
+      }, 100);
     }, 1000);
+    
   }
 }
 
@@ -144,3 +151,20 @@ function typePreloader() {
 window.addEventListener('load', () => {
   typePreloader();
 });
+
+
+window.addEventListener('load', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  if (!urlParams.has('success') && !urlParams.has('error')) {
+    typePreloader(); // csak első látogatáskor
+  } else {
+    // Preload skip – csak typewriter fusson
+    document.getElementById("preloader").style.display = 'none';
+    typeLine();
+  }
+});
+
+
+
+
+

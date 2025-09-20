@@ -47,7 +47,7 @@
 
   <h3>🧮 Eszközök és környezetek</h3>
   <ul>
-    <li>Visual Studio Code, IntelliJ IDEA</li>
+    <li>Visual Studio Code, IntelliJ IDEA,PhpStorm</li>
     <li>Postman, FileZilla, WinSCP, TeamViewer (távsegítséghez)</li>
     <li>phpMyAdmin, DBeaver, MySQL Workbench, Oracle SQL Developer</li>
     <li>Power BI, Power Automate</li>
@@ -91,4 +91,7 @@
     <li>Laravel mélyebb moduláris felépítése (Service layer, Repository pattern)</li>
     <li>CI/CD pipeline és automatikus tesztelés integrálása Docker környezetbe</li>
   </ul>
+
+  <a href="docs/Papp Zoltán CW.pdf" class="cv-button" download>📄 CW letöltése (PDF)</a>
+
 </section>
