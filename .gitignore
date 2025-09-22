@@ -1,6 +1,8 @@
 # Ne kerüljön be a  config
 mail.config.php
 ip_log.json
+counter_daily.txt
+
 
 # Composer vendor könyvtár
 /vendor/
