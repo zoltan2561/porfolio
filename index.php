@@ -15,7 +15,7 @@ if (isset($_GET['lang']) && in_array($_GET['lang'], ['hu', 'en'])) {
 <meta name="description" content="Papp Zoltán IT szakember – webfejlesztés, programozás, hálózat és IT támogatás. Segítek cégednek vagy projektednek a digitális világban.">
 <meta property="og:title" content="Papp Zoltán | IT Portfólió">
 <meta property="og:description" content="Több mint 10 év IT tapasztalattal vállalok webes és technikai megoldásokat.">
-<meta property="og:image" content="https://pzoli.com/icons/profile-bw.jpg">
+<meta property="og:image" content="https://pzoli.com/icons/og.jpg">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://pzoli.com">
 <meta name="keywords" content="IT, webfejlesztés, Zoltán, PHP, hálózat, informatikus, programozó">
@@ -78,17 +78,12 @@ if (isset($_GET['lang']) && in_array($_GET['lang'], ['hu', 'en'])) {
   <div class="services">
 
     <div class="service">
-<<<<<<< HEAD
       <h3>💻 <?php echo ($lang === 'hu') ? 'Weboldalak és fejlesztés' : 'Websites & Development'; ?></h3>
       <p>
         <?php echo ($lang === 'hu') 
           ? 'Egyedi bemutatkozó weboldalak, névjegy oldalak és kisvállalkozásoknak készült webshopok – profi online jelenlét, ami ügyfeleket és bevételt hoz.'
           : 'Custom business card websites, personal portfolio pages, and small business e-shops – a professional online presence that attracts customers and generates revenue.'; ?>
       </p>
-=======
-      <h3>🛠️ <?php echo ($lang === 'hu') ? 'Számítógépes szerviz' : 'Computer Repair'; ?></h3>
-      <p><?php echo ($lang === 'hu') ? 'Hardver hibák javítása, gépépítés, tisztítás,  optimalizálás.' : 'Hardware troubleshooting, PC building, cleaning,  optimization.'; ?></p>
->>>>>>> 64a0221124cb72de7fea5ba369b03060d8d8b59d
     </div>
 
     <div class="service">
@@ -110,7 +105,6 @@ if (isset($_GET['lang']) && in_array($_GET['lang'], ['hu', 'en'])) {
     </div>
 
     <div class="service">
-<<<<<<< HEAD
       <h3>📱 <?php echo ($lang === 'hu') ? 'Mobil szerviz' : 'Mobile Service'; ?></h3>
       <p>
         <?php echo ($lang === 'hu') 
@@ -118,15 +112,6 @@ if (isset($_GET['lang']) && in_array($_GET['lang'], ['hu', 'en'])) {
           : 'Screen and battery replacement, software updates and optimization, storage cleanup – making your phone feel brand new.'; ?>
       </p>
     </div>
-=======
-  <h3>📣 <?php echo ($lang === 'hu') ? 'Online jelenlét & kampánykezelés' : 'Online Presence & Campaigns'; ?></h3>
-  <p>
-    <?php echo ($lang === 'hu') 
-      ? 'Google Analytics, Facebook / Insta hirdetések, webes statisztika és célzott kampányok kezelése.' 
-      : 'Google Analytics, Facebook / Insta ads, web stats and targeted campaign management.'; ?>
-  </p>
-</div>
->>>>>>> 64a0221124cb72de7fea5ba369b03060d8d8b59d
 
     <div class="service">
       <h3>💽 <?php echo ($lang === 'hu') ? 'Szoftver beállítás' : 'Software Setup'; ?></h3>
@@ -212,20 +197,10 @@ if (isset($_GET['lang']) && in_array($_GET['lang'], ['hu', 'en'])) {
 
   <h2><?php echo ($lang === 'hu') ? 'Kapcsolat' : 'Contact'; ?></h2>
   <div class="contact-info">
-<<<<<<< HEAD
     <p>📧 <strong>E-mail:</strong> <a href="mailto:melo@pzoli.com">melo@pZoli.com</a></p>
     <p>💼 <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/papp-zoltán-41a7a4172/" target="_blank">linkedin.com/in/zoltan</a></p>
     <p>📷 <strong>Instagram:</strong> <a href="https://www.instagram.com/zoltan.ppp/#" target="_blank">@zoltan</a></p>
     <p>📘 <strong>Facebook:</strong> <a href="https://facebook.com/ztech20" target="_blank">facebook.com/zoltan</a></p>
-=======
-    <p>📧 <strong>E-mail:</strong> <a href="mailto:pappzoltan6969@gmail.com">pappzoltan6969@gmail.com</a></p>
-    <p>📱 <strong><?php echo ($lang === 'hu') ? 'Telefon:' : 'Phone:'; ?></strong> <a href="tel:+36201234567">+36 20 468 3837</a></p>
-    <p>💼 <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/papp-zoltán-41a7a4172/" target="_blank">linkedin.com/in/zoltan</a></p>
-    <p>📷 <strong>Instagram:</strong> <a href="https://www.instagram.com/zoltan.ppp/" target="_blank">@zoltan.ppp</a></p>
-    <p>📘 <strong>Facebook:</strong> <a href="https://facebook.com/ztech20" target="_blank">facebook.com/ztech20</a></p>
-
-
->>>>>>> 64a0221124cb72de7fea5ba369b03060d8d8b59d
     <?php if (isset($_GET['success'])): ?>
       <p class="form-success"><?php echo ($lang === 'hu') ? '✅ Köszönöm! Az üzeneted megérkezett.' : '✅ Thank you! Your message has been received.'; ?></p>
     <?php elseif (isset($_GET['error'])): ?>
@@ -256,8 +231,8 @@ const typewriterLines = <?php
 if ($lang === 'hu') {
     $lines_hu = [
       ["> Rendszer inicializálása...", "> Biztonságos kapcsolat létrehozása...", "> Technológiák betöltése...", "> Állapot: Készen áll ✅", " Üdvözöllek a weboldalamon 👋"],
-      ["> 📡 Kapcsolat indítása...", "> Hálózati modul betöltve", "> Portfólió aktív ✅", "> Interfész megnyitása...", " Helló, látogató! Örülök, hogy benéztél 🙌"],
-      ["> 🔎 Diagnosztika...", "> Nincsenek hibák", "> Védelmi protokoll aktív", "> Betöltés 100% ✔️", " Jó böngészést, érezd otthon magad 🌐"],
+      ["> 📡 Kapcsolat indítása...", "> Hálózati modul betöltve", "> Portfólió aktív ✅", "> Interfész megnyitása...", " Helló, látogató! 🙌"],
+      ["> 🔎 Diagnosztika...", "> Nincsenek hibák", "> Védelmi protokoll aktív", "> Betöltés 100% ✔️", " Üdv az odlalamon🌐"],
       ["> 🗂️ Adatok előkészítése...", "> Profil betöltve", "> Portfólió online ✅", " Köszöntelek az oldalamon 🙋‍♂️"]
     ];
     echo json_encode($lines_hu[array_rand($lines_hu)]);
@@ -278,19 +253,19 @@ const preloaderLines = <?php
 
 $lines_hu = [
   ["> 👋 Üdvözöllek!", "  Jó, hogy itt vagy 😊", "➡️ Indítás... 🟢"],
-  ["> 🤖 Helló, látogató!", "  Hozzáférés engedélyezve ✅", "➡️ Csatlakozás folyamatban..."],
-  ["> 🔎 Rendszerellenőrzés...", "  Nincsenek hibák", "➡️ Betöltés 100% ✅"],
-  ["> 📡 Kapcsolat létrehozva", "  Biztonságos csatorna aktív", "➡️ Weboldal betöltése folyamatban..."],
-  ["> 🔐 Hitelesítés sikeres", "  Felhasználói szint: Látogató", "➡️ Engedélyezett hozzáférés ✔️"]
+  ["> 🤖 Helló, látogató!", "  Örülök, hogy benéztél 🙌", "➡️ Csatlakozás folyamatban..."],
+  ["> 🌟 Helló!", "  Örülök, hogy benéztél ✨", "➡️ Betöltés megkezdve..."],
+  ["> 🎉 Helló, látogató!", " Üdvözöllek 😎", "➡️ Indulunk! 🚀"]
 ];
 
 $lines_en = [
-  ["> 👋 Welcome!", "  Glad you're here 😊", "➡️ Entering... 🟢"],
-  ["> 🤖 Hello, user!", "  Access granted ✅", "➡️ Connection in progress..."],
-  ["> 🔎 System check...", "  All clear", "➡️ Load 100% ✅"],
-  ["> 📡 Connection established", "  Secure channel active", "➡️ Website loading..."],
-  ["> 🔐 Authentication successful", "  User level: Visitor", "➡️ Access granted ✔️"]
+  ["> 👋 Welcome!", "  Glad you're here 😊", "➡️ Starting... 🟢"],
+  ["> 🤖 Hello, visitor!", "  Great to have you 🙌", "➡️ Connecting..."],
+  ["> 🌟 Hello!", "  Happy to see you here ✨", "➡️ Loading started..."],
+  ["> 🎉 Hey visitor!", "  Welcome! 😎", "➡️ Let's go! 🚀"]
 ];
+
+
 
 
 
