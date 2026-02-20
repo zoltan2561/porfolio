@@ -13,14 +13,16 @@ if (isset($_GET['lang']) && in_array($_GET['lang'], ['hu', 'en'])) {
 
 <head>
   <!-- Head-ben -->
-  <meta name="description" content="Papp Zoltán IT szakember – webfejlesztés, programozás, hálózat és IT támogatás. Segítek cégednek vagy projektednek a digitális világban.">
-  <meta property="og:title" content="Papp Zoltán | IT Portfólió">
-  <meta property="og:description" content="Több mint 10 év IT tapasztalattal vállalok webes és technikai megoldásokat.">
+  <meta name="description" content="Papp Zoltán IT szakember – webfejlesztés, programozás, hálózat és IT támogatás. Segítek cégednek vagy projektednek a digitális világban. Vásárosnamény informatikus.">
+  <meta property="og:title" content="Papp Zoltán | IT specialista">
+  <meta property="og:description" content="Webfejlesztés, IT rendszerek és technikai megoldások – több mint 10 év tapasztalattal.">
   <meta property="og:image" content="https://pzoli.com/icons/og.jpg">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://pzoli.com">
-  <meta name="keywords" content="IT, webfejlesztés, Zoltán, PHP, hálózat, informatikus, programozó">
-
+  <meta property="og:logo" content="https://pzoli.com/icons/og.jpg" >
+        
+  <meta name="keywords" content="IT, webfejlesztés, Zoltán, PHP, hálózat, informatikus, programozó,Vásárosnamény,szabolcs megye,Szabolcs Szatmár Bereg,Mátészalka,szerviz,szerelő">
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Papp Zoltán IT specialista</title>
@@ -165,7 +167,7 @@ if (isset($_GET['lang']) && in_array($_GET['lang'], ['hu', 'en'])) {
     <div class="projects">
       <div class="project">
         <h3>🌯 GyrosCity</h3>
-        <p><?php echo ($lang === 'hu') ? 'Gyorsétterem weboldal, webshop funkciók, online fizetés, felhasználóprofil.' : 'Fast-food restaurant website, webshop features, online payment, user profile.'; ?></p> <a href="https://gyroscity.eu" target="_blank"><?php echo ($lang === 'hu') ? 'Weboldal megtekintése' : 'View Website'; ?></a>
+        <p><?php echo ($lang === 'hu') ? 'Gyorsétterem weboldal, webshop funkciók, online fizetés,és még rengeteg extra' : 'Fast-food restaurant website, webshop features, online payment,and lot of extra'; ?></p> <a href="https://gyroscity.eu" target="_blank"><?php echo ($lang === 'hu') ? 'Weboldal megtekintése' : 'View Website'; ?></a>
       </div>
       <div class="project">
         <h3>💈 ZCutzBarber</h3>
@@ -202,7 +204,11 @@ if (isset($_GET['lang']) && in_array($_GET['lang'], ['hu', 'en'])) {
 
     <h2><?php echo ($lang === 'hu') ? 'Kapcsolat' : 'Contact'; ?></h2>
     <div class="contact-info">
-      <p>📧 <strong>E-mail:</strong> <a href="mailto:melo@pzoli.com">melo@pZoli.com</a></p>
+      <p>📧 <strong>E-mail:</strong> 
+<a href="mailto:m&#101;&#108;&#111;&#64;&#112;&#122;&#111;&#108;&#105;&#46;&#99;&#111;&#109;">
+m&#101;&#108;&#111;&#64;&#112;&#90;&#111;&#108;&#105;&#46;&#99;&#111;&#109;
+</a></p>
+
       <p>💼 <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/papp-zoltán-41a7a4172/" target="_blank">linkedin.com/in/zoltan</a></p>
       <p>📷 <strong>Instagram:</strong> <a href="https://www.instagram.com/zoltan.ppp/#" target="_blank">@zoltan</a></p>
       <p>📘 <strong>Facebook:</strong> <a href="https://facebook.com/ztech20" target="_blank">facebook.com/zoltan</a></p>

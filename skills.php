@@ -92,6 +92,6 @@
     <li>CI/CD pipeline és automatikus tesztelés integrálása Docker környezetbe</li>
   </ul>
 
-  <a href="docs/Papp Zoltán CW.pdf" class="cv-button" download>📄 CW letöltése (PDF)</a>
+  <a href="docs/Papp Zoltán CV.pdf" class="cv-button" download>📄 CV letöltése (PDF)</a>
 
 </section>

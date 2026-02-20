@@ -83,5 +83,5 @@
     <li>Advanced Laravel (modular structure, Service/Repository patterns)</li>
     <li>CI/CD pipelines and automated testing in Docker environments</li>
   </ul>
-  <a href="docs/Papp Zoltán CW.pdf" class="cv-button" download>📄 Download CW (PDF)</a>
+  <a href="docs/Papp Zoltán CV.pdf" class="cv-button" download>📄 Download CV (PDF)</a>
 </section>
