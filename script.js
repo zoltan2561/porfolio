@@ -147,13 +147,34 @@ function typePreloader() {
   }
 }
 
+function hasSeenPreloader() {
+  try {
+    return localStorage.getItem('pz_preloader_seen') === '1';
+  } catch (error) {
+    return false;
+  }
+}
+
+function markPreloaderSeen() {
+  try {
+    localStorage.setItem('pz_preloader_seen', '1');
+  } catch (error) {
+    // no-op (private mode / blocked storage)
+  }
+}
+
 window.addEventListener('load', () => {
   const urlParams = new URLSearchParams(window.location.search);
-  const shouldSkipPreloader = urlParams.has('success') || urlParams.has('error') || isMobile || prefersReducedMotion;
+  const shouldSkipPreloader =
+    urlParams.has('success') ||
+    urlParams.has('error') ||
+    prefersReducedMotion ||
+    hasSeenPreloader();
 
   if (shouldSkipPreloader) {
     startTypewriterOnly();
   } else {
+    markPreloaderSeen();
     typePreloader();
   }
 });

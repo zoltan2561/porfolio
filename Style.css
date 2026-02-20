@@ -13,6 +13,12 @@ html {
   scroll-behavior: smooth;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 canvas {
   position: fixed;
   top: 0;
@@ -457,6 +463,18 @@ section h2 {
     display: block;
   }
 
+  .hero-video-placeholder {
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.7rem;
+  }
+
+  .hero-video {
+    max-height: 240px;
+  }
+
   #main-nav {
     display: none;
     flex-direction: column;
@@ -494,9 +512,6 @@ section h2 {
     width: 90%;
   }
 
-  #preloader {
-    display: none;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
