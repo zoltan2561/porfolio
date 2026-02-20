@@ -2,30 +2,107 @@
 include_once 'counter_daily.php';
 
 $lang = 'hu';
-if (isset($_GET['lang']) && in_array($_GET['lang'], ['hu', 'en'])) {
+if (isset($_GET['lang']) && in_array($_GET['lang'], ['hu', 'en'], true)) {
   $lang = $_GET['lang'];
 }
 
-?>
+$baseUrl = 'https://pzoli.com';
+$currentUrl = $baseUrl . ($lang === 'en' ? '/?lang=en' : '/');
+$canonicalUrl = $baseUrl . '/';
 
+$meta = [
+  'hu' => [
+    'title' => 'Papp Zoltán | Webfejlesztés, Laravel, SQL, Linux & DevOps',
+    'description' => 'Papp Zoltán IT specialista: üzleti weboldalak, Laravel/PHP fejlesztés, SQL alapú rendszerek, automatizálás, Linux és DevOps támogatás.',
+    'heroTitle' => 'Webfejlesztés és IT megoldások, üzleti fókuszban',
+    'heroText' => 'Papp Zoltán vagyok. PHP/Laravel, SQL és JavaScript alapokon építek gyors, stabil webes rendszereket. Linux és DevOps szemlélettel segítek, hogy a digitális működésed megbízhatóbb és hatékonyabb legyen.',
+    'videoTitle' => '🎬 Rövid bemutatkozó videó (hamarosan)',
+    'videoText' => 'Ide fog bekerülni a promo videóm. A fájlt elég a projekt gyökerébe feltölteni promo.mp4 néven.',
+    'primaryCta' => '📩 Kérek ajánlatot',
+    'secondaryCta' => '💻 Tech stackem',
+    'tertiaryCta' => 'Munkáim »'
+  ],
+  'en' => [
+    'title' => 'Zoltán Papp | Web Development, Laravel, SQL, Linux & DevOps',
+    'description' => 'Zoltán Papp IT specialist: business websites, Laravel/PHP development, SQL-based systems, automation, Linux and DevOps support.',
+    'heroTitle' => 'Business-focused Web Development & IT Solutions',
+    'heroText' => 'I am Zoltán Papp. I build fast, stable web systems with PHP/Laravel, SQL and JavaScript. With a Linux + DevOps mindset, I help make your digital operations more reliable and efficient.',
+    'videoTitle' => '🎬 Short Intro Video (coming soon)',
+    'videoText' => 'My promo video will appear here. Just upload it to the project root as promo.mp4.',
+    'primaryCta' => '📩 Request a quote',
+    'secondaryCta' => '💻 My tech stack',
+    'tertiaryCta' => 'My Works »'
+  ]
+];
+
+$schema = [
+  '@context' => 'https://schema.org',
+  '@graph' => [
+    [
+      '@type' => 'Person',
+      '@id' => $baseUrl . '#person',
+      'name' => 'Papp Zoltán',
+      'url' => $baseUrl,
+      'image' => $baseUrl . '/icons/profile-bw.jpg',
+      'jobTitle' => 'IT specialista',
+      'sameAs' => [
+        'https://linkedin.com/in/papp-zoltán-41a7a4172/',
+        'https://www.instagram.com/zoltan.ppp/',
+        'https://facebook.com/ztech20'
+      ]
+    ],
+    [
+      '@type' => 'ProfessionalService',
+      '@id' => $baseUrl . '#service',
+      'name' => 'Papp Zoltán IT szolgáltatások',
+      'url' => $baseUrl,
+      'provider' => ['@id' => $baseUrl . '#person'],
+      'areaServed' => 'HU',
+      'serviceType' => [
+        'PHP és Laravel fejlesztés',
+        'SQL adatbázis tervezés',
+        'JavaScript alapú webes fejlesztés',
+        'Linux és DevOps támogatás'
+      ]
+    ],
+    [
+      '@type' => 'WebSite',
+      '@id' => $baseUrl . '#website',
+      'url' => $baseUrl,
+      'name' => 'Papp Zoltán Portfólió',
+      'inLanguage' => ['hu-HU', 'en-US']
+    ]
+  ]
+];
+?>
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="<?php echo $lang === 'hu' ? 'hu' : 'en'; ?>">
 
 <head>
-  <!-- Head-ben -->
-  <meta name="description" content="Papp Zoltán IT szakember – webfejlesztés, programozás, hálózat és IT támogatás. Segítek cégednek vagy projektednek a digitális világban. Vásárosnamény informatikus.">
-  <meta property="og:title" content="Papp Zoltán | IT specialista">
-  <meta property="og:description" content="Webfejlesztés, IT rendszerek és technikai megoldások – több mint 10 év tapasztalattal.">
-  <meta property="og:image" content="https://pzoli.com/icons/og.jpg">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://pzoli.com">
-  <meta property="og:logo" content="https://pzoli.com/icons/og.jpg" >
-        
-  <meta name="keywords" content="IT, webfejlesztés, Zoltán, PHP, hálózat, informatikus, programozó,Vásárosnamény,szabolcs megye,Szabolcs Szatmár Bereg,Mátészalka,szerviz,szerelő">
-  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Papp Zoltán IT specialista</title>
+  <title><?php echo htmlspecialchars($meta[$lang]['title'], ENT_QUOTES, 'UTF-8'); ?></title>
+  <meta name="description" content="<?php echo htmlspecialchars($meta[$lang]['description'], ENT_QUOTES, 'UTF-8'); ?>">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES, 'UTF-8'); ?>">
+  <link rel="alternate" hreflang="hu" href="<?php echo $baseUrl; ?>/">
+  <link rel="alternate" hreflang="en" href="<?php echo $baseUrl; ?>/?lang=en">
+  <link rel="alternate" hreflang="x-default" href="<?php echo $baseUrl; ?>/">
+
+  <meta property="og:title" content="<?php echo htmlspecialchars($meta[$lang]['title'], ENT_QUOTES, 'UTF-8'); ?>">
+  <meta property="og:description" content="<?php echo htmlspecialchars($meta[$lang]['description'], ENT_QUOTES, 'UTF-8'); ?>">
+  <meta property="og:image" content="<?php echo $baseUrl; ?>/icons/og.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="<?php echo htmlspecialchars($currentUrl, ENT_QUOTES, 'UTF-8'); ?>">
+  <meta property="og:locale" content="<?php echo $lang === 'hu' ? 'hu_HU' : 'en_US'; ?>">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="<?php echo htmlspecialchars($meta[$lang]['title'], ENT_QUOTES, 'UTF-8'); ?>">
+  <meta name="twitter:description" content="<?php echo htmlspecialchars($meta[$lang]['description'], ENT_QUOTES, 'UTF-8'); ?>">
+  <meta name="twitter:image" content="<?php echo $baseUrl; ?>/icons/og.jpg">
+
+  <script type="application/ld+json"><?php echo json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT); ?></script>
+
   <link rel="stylesheet" href="Style.css">
 </head>
 
@@ -44,9 +121,6 @@ if (isset($_GET['lang']) && in_array($_GET['lang'], ['hu', 'en'])) {
 
 
   <div class="nav-container">
-
-
-
     <div class="hamburger" onclick="toggleMenu()">☰</div>
     <nav id="main-nav">
       <a href="#rolam"><?php echo ($lang === 'hu') ? 'Rólam' : 'About'; ?></a>
@@ -62,20 +136,20 @@ if (isset($_GET['lang']) && in_array($_GET['lang'], ['hu', 'en'])) {
   </div>
 
   <div class="foreground" id="rolam">
-    <img src="icons/profile-bw.jpg" alt="Profilkép">
-    <?php if ($lang === 'hu'): ?>
-      <h1>Üdvözöllek a Weboldalamon</h1>
-      <p>A nevem Papp Zoltán, IT specialista. Több mint 10 éve foglalkozom számítógépes rendszerekkel, szoftverfejlesztéssel, weboldalakkal, valamint hardveres és hálózati megoldásokkal. Célom, hogy ügyfeleimnek teljes körű és hatékony IT támogatást nyújtsak.</p>
-      <a href="#kapcsolat" class="cta-button">Lépj kapcsolatba velem</a>
-      <a href="#technologiak" class="cta-button">💻 Technológiai ismereteim</a>
-      <a href="#projektek" class="cta-button">Munkáim »</a>
-    <?php else: ?>
-      <h1>Welcome to My Website</h1>
-      <p>My name is Zoltán Papp, an IT specialist with over 10 years of experience in computer systems, software development, websites, and hardware/network solutions. My goal is to provide clients with comprehensive and effective IT support.</p>
-      <a href="#kapcsolat" class="cta-button">Contact me</a>
-      <a href="#technologiak" class="cta-button">💻 My tech stack</a>
-      <a href="#projektek" class="cta-button">My Works »</a>
-    <?php endif; ?>
+    <img src="icons/profile-bw.jpg" alt="<?php echo ($lang === 'hu') ? 'Papp Zoltán profilkép' : 'Profile photo of Zoltán Papp'; ?>" loading="lazy" width="150" height="150">
+    <h1><?php echo $meta[$lang]['heroTitle']; ?></h1>
+    <p><?php echo $meta[$lang]['heroText']; ?></p>
+    <div class="hero-video-placeholder" aria-label="Intro video placeholder">
+      <h3><?php echo $meta[$lang]['videoTitle']; ?></h3>
+      <video controls preload="metadata" class="hero-video">
+        <source src="promo.mp4" type="video/mp4">
+        <?php echo ($lang === 'hu') ? 'A böngésződ nem támogatja a videó lejátszást.' : 'Your browser does not support video playback.'; ?>
+      </video>
+      <p><?php echo $meta[$lang]['videoText']; ?></p>
+    </div>
+    <a href="#kapcsolat" class="cta-button"><?php echo $meta[$lang]['primaryCta']; ?></a>
+    <a href="#technologiak" class="cta-button"><?php echo $meta[$lang]['secondaryCta']; ?></a>
+    <a href="#projektek" class="cta-button"><?php echo $meta[$lang]['tertiaryCta']; ?></a>
   </div>
 
 
@@ -159,20 +233,17 @@ if (isset($_GET['lang']) && in_array($_GET['lang'], ['hu', 'en'])) {
     </div>
   </section>
 
-
-
-
   <section id="projektek">
     <h2><?php echo ($lang === 'hu') ? 'Projektek' : 'Projects'; ?></h2>
     <div class="projects">
       <div class="project">
         <h3>🌯 GyrosCity</h3>
-        <p><?php echo ($lang === 'hu') ? 'Gyorsétterem weboldal, webshop funkciók, online fizetés,és még rengeteg extra' : 'Fast-food restaurant website, webshop features, online payment,and lot of extra'; ?></p> <a href="https://gyroscity.eu" target="_blank"><?php echo ($lang === 'hu') ? 'Weboldal megtekintése' : 'View Website'; ?></a>
+        <p><?php echo ($lang === 'hu') ? 'Gyorsétterem weboldal, webshop funkciók, online fizetés,és még rengeteg extra' : 'Fast-food restaurant website, webshop features, online payment,and lot of extra'; ?></p> <a href="https://gyroscity.eu" target="_blank" rel="noopener noreferrer"><?php echo ($lang === 'hu') ? 'Weboldal megtekintése' : 'View Website'; ?></a>
       </div>
       <div class="project">
         <h3>💈 ZCutzBarber</h3>
         <p><?php echo ($lang === 'hu') ? 'Fodrász weboldal időpontfoglalással és galériával.' : 'Barbershop website with booking and gallery.'; ?></p>
-        <a href="https://zcutzbarber.com" target="_blank"><?php echo ($lang === 'hu') ? 'Weboldal megtekintése' : 'View Website'; ?></a>
+        <a href="https://zcutzbarber.com" target="_blank" rel="noopener noreferrer"><?php echo ($lang === 'hu') ? 'Weboldal megtekintése' : 'View Website'; ?></a>
       </div>
       <div class="project">
         <h3>🧰 <?php echo ($lang === 'hu') ? 'Hardveres megoldások' : 'Hardware Solutions'; ?></h3>
@@ -185,9 +256,6 @@ if (isset($_GET['lang']) && in_array($_GET['lang'], ['hu', 'en'])) {
     </div>
   </section>
 
-
-
-
   <?php
   if ($lang === 'hu') {
     include 'skills.php';
@@ -196,22 +264,19 @@ if (isset($_GET['lang']) && in_array($_GET['lang'], ['hu', 'en'])) {
   }
   ?>
 
-
-
-
-
   <section id="kapcsolat">
 
     <h2><?php echo ($lang === 'hu') ? 'Kapcsolat' : 'Contact'; ?></h2>
     <div class="contact-info">
-      <p>📧 <strong>E-mail:</strong> 
-<a href="mailto:m&#101;&#108;&#111;&#64;&#112;&#122;&#111;&#108;&#105;&#46;&#99;&#111;&#109;">
-m&#101;&#108;&#111;&#64;&#112;&#90;&#111;&#108;&#105;&#46;&#99;&#111;&#109;
-</a></p>
+      <p>📧 <strong>E-mail:</strong>
+        <a href="mailto:m&#101;&#108;&#111;&#64;&#112;&#122;&#111;&#108;&#105;&#46;&#99;&#111;&#109;">
+          m&#101;&#108;&#111;&#64;&#112;&#90;&#111;&#108;&#105;&#46;&#99;&#111;&#109;
+        </a>
+      </p>
 
-      <p>💼 <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/papp-zoltán-41a7a4172/" target="_blank">linkedin.com/in/zoltan</a></p>
-      <p>📷 <strong>Instagram:</strong> <a href="https://www.instagram.com/zoltan.ppp/#" target="_blank">@zoltan</a></p>
-      <p>📘 <strong>Facebook:</strong> <a href="https://facebook.com/ztech20" target="_blank">facebook.com/zoltan</a></p>
+      <p>💼 <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/papp-zoltán-41a7a4172/" target="_blank" rel="noopener noreferrer">linkedin.com/in/zoltan</a></p>
+      <p>📷 <strong>Instagram:</strong> <a href="https://www.instagram.com/zoltan.ppp/#" target="_blank" rel="noopener noreferrer">@zoltan</a></p>
+      <p>📘 <strong>Facebook:</strong> <a href="https://facebook.com/ztech20" target="_blank" rel="noopener noreferrer">facebook.com/zoltan</a></p>
       <?php if (isset($_GET['success'])): ?>
         <p class="form-success"><?php echo ($lang === 'hu') ? '✅ Köszönöm! Az üzeneted megérkezett.' : '✅ Thank you! Your message has been received.'; ?></p>
       <?php elseif (isset($_GET['error'])): ?>
@@ -222,10 +287,7 @@ m&#101;&#108;&#111;&#64;&#112;&#90;&#111;&#108;&#105;&#46;&#99;&#111;&#109;
     <form class="contact-form" method="POST" action="send.php">
       <h3><?php echo ($lang === 'hu') ? '📨 Lépj kapcsolatba velem' : '📨 Get in Touch'; ?></h3>
 
-      <!-- Nyelv visszaadás redirecthez -->
       <input type="hidden" name="lang" value="<?php echo htmlspecialchars($lang, ENT_QUOTES); ?>">
-
-      <!-- Honeypot (rejtsd el CSS-sel) -->
       <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
 
       <input type="text" name="name" placeholder="<?php echo ($lang === 'hu') ? 'Név' : 'Name'; ?>" required>
@@ -243,7 +305,7 @@ m&#101;&#108;&#111;&#64;&#112;&#90;&#111;&#108;&#105;&#46;&#99;&#111;&#109;
                               $lines_hu = [
                                 ["> Rendszer inicializálása...", "> Biztonságos kapcsolat létrehozása...", "> Technológiák betöltése...", "> Állapot: Készen áll ✅", " Üdvözöllek a weboldalamon 👋"],
                                 ["> 📡 Kapcsolat indítása...", "> Hálózati modul betöltve", "> Portfólió aktív ✅", "> Interfész megnyitása...", " Helló, látogató! 🙌"],
-                                ["> 🔎 Diagnosztika...", "> Nincsenek hibák", "> Védelmi protokoll aktív", "> Betöltés 100% ✔️", " Üdv az odlalamon🌐"],
+                                ["> 🔎 Diagnosztika...", "> Nincsenek hibák", "> Védelmi protokoll aktív", "> Betöltés 100% ✔️", " Üdv az oldalamon 🌐"],
                                 ["> 🗂️ Adatok előkészítése...", "> Profil betöltve", "> Portfólió online ✅", " Köszöntelek az oldalamon 🙋‍♂️"]
                               ];
                               echo json_encode($lines_hu[array_rand($lines_hu)]);
@@ -276,10 +338,6 @@ m&#101;&#108;&#111;&#64;&#112;&#90;&#111;&#108;&#105;&#46;&#99;&#111;&#109;
                               ["> 🎉 Hey visitor!", "  Welcome! 😎", "➡️ Let's go! 🚀"]
                             ];
 
-
-
-
-
                             echo json_encode(
                               $lang === 'hu'
                                 ? $lines_hu[array_rand($lines_hu)]
@@ -287,8 +345,7 @@ m&#101;&#108;&#111;&#64;&#112;&#90;&#111;&#108;&#105;&#46;&#99;&#111;&#109;
                             );
                             ?>;
   </script>
-  <script src="script.js">
-  </script>
+  <script src="script.js"></script>
 
 
 </body>
