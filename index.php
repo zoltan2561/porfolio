@@ -12,27 +12,40 @@ $canonicalUrl = $baseUrl . '/';
 
 $meta = [
   'hu' => [
-    'title' => 'Papp Zoltán | Webfejlesztés, Laravel, SQL, Linux & DevOps',
-    'description' => 'Papp Zoltán IT specialista: üzleti weboldalak, Laravel/PHP fejlesztés, SQL alapú rendszerek, automatizálás, Linux és DevOps támogatás.',
-    'heroTitle' => 'Webfejlesztés és IT megoldások, üzleti fókuszban',
-    'heroText' => 'Papp Zoltán vagyok. PHP/Laravel, SQL és JavaScript alapokon építek gyors, stabil webes rendszereket. Linux és DevOps szemlélettel segítek, hogy a digitális működésed megbízhatóbb és hatékonyabb legyen.',
-    'videoTitle' => '🎬 Rövid bemutatkozó videó (hamarosan)',
-    'videoText' => 'Ide fog bekerülni a promo videóm. A fájlt elég a projekt gyökerébe feltölteni promo.mp4 néven.',
+    'title' => 'Papp Zoltán – Webshop, webfejlesztés és IT megoldások vállalkozásoknak',
+    
+    'description' => 'Webshop készítés, időpontfoglaló rendszer, üzleti weboldal fejlesztés és komplex IT megoldások vállalkozások számára országszerte. Stabil, gyors és bővíthető digitális rendszerek szoftveres és hardveres háttérrel.',
+    
+    'heroTitle' => 'Komplex szoftveres és hardveres IT megoldások',
+    
+    'heroText' => 'Webshopokat, időpontfoglalási rendszereket és professzionális üzleti weboldalakat fejlesztek, emellett teljes körű szoftveres és hardveres megoldásokat tervezek és valósítok meg. A célom a stabil, megbízható és hosszú távon bővíthető digitális működés.',
+    
+    'videoTitle' => 'Hogyan dolgozom a háttérben?',
+    
+    'videoText' => 'Egy rövid betekintés a mindennapi munkámba – fejlesztés, rendszerépítés, eszközszerviz és technikai problémamegoldás.',
+    
     'primaryCta' => '📩 Kérek ajánlatot',
-    'secondaryCta' => '💻 Tech stackem',
+    'secondaryCta' => '💼 Szolgáltatásaim',
     'tertiaryCta' => 'Munkáim »'
   ],
+
   'en' => [
-    'title' => 'Zoltán Papp | Web Development, Laravel, SQL, Linux & DevOps',
-    'description' => 'Zoltán Papp IT specialist: business websites, Laravel/PHP development, SQL-based systems, automation, Linux and DevOps support.',
-    'heroTitle' => 'Business-focused Web Development & IT Solutions',
-    'heroText' => 'I am Zoltán Papp. I build fast, stable web systems with PHP/Laravel, SQL and JavaScript. With a Linux + DevOps mindset, I help make your digital operations more reliable and efficient.',
-    'videoTitle' => '🎬 Short Intro Video (coming soon)',
-    'videoText' => 'My promo video will appear here. Just upload it to the project root as promo.mp4.',
-    'primaryCta' => '📩 Request a quote',
-    'secondaryCta' => '💻 My tech stack',
-    'tertiaryCta' => 'My Works »'
-  ]
+  'title' => 'Papp Zoltán – Web Development and IT Solutions',
+  
+  'description' => 'Webshop development, booking systems, business websites and comprehensive IT solutions for companies worldwide. Stable, scalable digital systems with both software and hardware expertise.',
+  
+  'heroTitle' => 'Comprehensive Software and Hardware IT Solutions',
+  
+  'heroText' => 'I develop webshops, booking systems and professional business websites, while also delivering complete software and hardware solutions. My goal is to build stable, reliable and scalable digital systems that support long-term business growth.',
+  
+  'videoTitle' => 'How I Work Behind the Scenes',
+  
+  'videoText' => 'A short glimpse into my daily work – development, system building, hardware service and technical problem solving.',
+  
+  'primaryCta' => '📩 Request a Quote',
+  'secondaryCta' => '💼 My Services',
+  'tertiaryCta' => 'My Work »'
+]
 ];
 
 $schema = [
