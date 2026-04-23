@@ -1,0 +1,368 @@
+<?php
+
+return [
+    'base_url' => env('PORTFOLIO_BASE_URL', 'https://pzoli.com'),
+    'site_name' => 'Papp Zoltán Portfólió',
+    'person' => [
+        'name' => 'Papp Zoltán',
+        'job_title' => 'Web developer és digitális megoldások szakértője',
+        'image' => 'icons/profile-bw.jpg',
+        'contact' => [
+            'email' => 'melo@pzoli.com',
+            'linkedin' => 'https://linkedin.com/in/papp-zoltán-41a7a4172/',
+            'instagram' => 'https://www.instagram.com/zoltan.ppp/',
+            'facebook' => 'https://facebook.com/ztech20',
+        ],
+        'same_as' => [
+            'https://linkedin.com/in/papp-zoltán-41a7a4172/',
+            'https://www.instagram.com/zoltan.ppp/',
+            'https://facebook.com/ztech20',
+        ],
+    ],
+    'service_types' => [
+        'PHP és Laravel fejlesztés',
+        'SQL adatbázis-tervezés',
+        'JavaScript alapú webes fejlesztés',
+        'Linux és DevOps támogatás',
+    ],
+    'locales' => [
+        'hu' => [
+            'meta' => [
+                'home' => [
+                    'title' => 'Papp Zoltán – Webfejlesztő és digitális megoldások vállalkozásoknak',
+                    'description' => 'Weboldalak, webshopok, foglalási rendszerek és automatizálás vállalkozásoknak. Nem csak szép felületet készítek, hanem átgondolt, működő digitális megoldást.',
+                ],
+                'skills' => [
+                    'title' => 'Papp Zoltán – Technológiák és szakmai háttér',
+                    'description' => 'Részletes áttekintés azokról a technológiákról és területekről, amelyekkel webes, automatizálási és IT projekteken dolgozom.',
+                ],
+            ],
+            'nav' => [
+                'about' => 'Rólam',
+                'services' => 'Szolgáltatások',
+                'projects' => 'Projektek',
+                'skills' => 'Technológiák',
+                'contact' => 'Kapcsolat',
+            ],
+            'home' => [
+                'profile_alt' => 'Papp Zoltán profilkép',
+                'hero_title' => 'Webfejlesztés, ami üzletileg is működik',
+                'hero_text' => 'Gyors, átlátható weboldalakat és rendszereket készítek vállalkozásoknak.',
+                'hero_note' => 'AI + automatizációval és stabil technikai háttérrel segítek egyszerűbbé tenni a működést.',
+                'proof_chip' => 'WEB + AI + AUTOMATIZÁLÁS',
+                'proof_title' => 'A három fő terület, amivel dolgozom',
+                'proof_text' => 'A weboldal nálam sokszor csak a kezdőpont: az igazi érték az, amikor a felület, az automatizálás és a technikai háttér együtt működik.',
+                'proof_footer' => 'Így nem csak egy szép oldalt kapsz, hanem egy jobban összerakott digitális rendszert.',
+                'highlights' => [
+                    'Webfejlesztés',
+                    'AI + automatizáció',
+                    'Gépek és technikai háttér',
+                ],
+                'proof_cards' => [
+                    [
+                        'title' => 'Webfejlesztés',
+                        'text' => 'Weboldalak, landingek, webshopok, foglalási rendszerek és egyedi webes funkciók üzleti szemlélettel.',
+                    ],
+                    [
+                        'title' => 'AI + automatizáció',
+                        'text' => 'Ismétlődő feladatok, űrlapok, válaszok, értesítések vagy admin folyamatok egyszerűsítése AI-val és automatizálással.',
+                    ],
+                    [
+                        'title' => 'Gépek és technikai háttér',
+                        'text' => 'Ha a rendszer mögé stabil eszközök, jobb működés vagy technikai rendrakás kell, abban is tudok segíteni.',
+                    ],
+                ],
+                'actions' => [
+                    'primary' => '📩 Beszéljünk a projektedről',
+                    'secondary' => '💻 Szakmai háttér',
+                    'tertiary' => '🚀 Nézd meg a munkáim',
+                ],
+                'services' => [
+                    'title' => 'Szolgáltatások',
+                    'lead' => 'A fő fókuszom a webfejlesztésen van: olyan oldalakban és rendszerekben gondolkodom, amik nemcsak jól néznek ki, hanem a működésedet is tényleg támogatják. Ha kell, a mögöttes technikai oldalt is összerakom hozzá.',
+                    'items' => [
+                        [
+                            'title' => '💻 Webfejlesztés és automatizálás',
+                            'text' => 'Ha kell egy modern weboldal, online foglalás, webshop vagy valami, ami levesz adminisztrációt a válladról, ebben tudok segíteni. A cél mindig az, hogy egyszerűbb, gyorsabb és profibb legyen a működésed.',
+                        ],
+                        [
+                            'title' => '🛠️ Eszközös támogatás',
+                            'text' => 'Ha egy gépet bővíteni, rendbe tenni vagy stabilabbá tenni kell, abban is tudok segíteni. Ez jó kiegészítés akkor is, ha a webes projekt mellé a teljes technikai környezetet is össze kell rakni.',
+                        ],
+                        [
+                            'title' => '🌐 Hálózat és technikai háttér',
+                            'text' => 'Ha egy vállalkozásnál a webes rendszer mellé stabil hálózat, jobb Wi‑Fi vagy rendezettebb technikai háttér kell, ebben is tudok gyakorlati segítséget adni.',
+                        ],
+                        [
+                            'title' => '📱 Eszközök és napi IT támogatás',
+                            'text' => 'Ha a napi működésedhez használt eszközök, szoftverek vagy beállítások körül van elakadás, segítek gyorsan használható állapotba hozni őket.',
+                        ],
+                        [
+                            'title' => '💽 Szoftver beállítás',
+                            'text' => 'Programok telepítése, beállítása és rendberakása úgy, hogy ne neked kelljen vele órákig szenvedni. Olyan gépet kapsz vissza, ami tényleg használatra kész.',
+                        ],
+                        [
+                            'title' => '💾 Biztonsági mentés és adatvédelem',
+                            'text' => 'Mentés, helyreállítás, jelszókezelés és alap biztonsági higiénia. Az adat akkor érték, ha vissza is lehet hozni, amikor tényleg szükség van rá.',
+                        ],
+                        [
+                            'title' => '🛒 Eszközvásárlási tanácsadás',
+                            'text' => 'Segítek jól vásárolni, nem csak sokat költeni. Igény, keret és használat alapján ajánlok eszközt, és a beüzemelésben is ott vagyok.',
+                        ],
+                        [
+                            'title' => '🔐 Technikai tanácsadás',
+                            'text' => 'Ha azt kell eldönteni, milyen rendszerre, fejlesztésre vagy technikai háttérre van valóban szükséged, segítek tisztán látni és jó irányba indulni.',
+                        ],
+                    ],
+                ],
+                'projects' => [
+                    'title' => 'Projektek',
+                    'lead' => 'Néhány példa arra, hogyan lesz a technikából valódi üzleti eszköz.',
+                    'hint' => 'Mobilon oldalra húzva vagy a nyilakkal tudsz lapozni a projektek között.',
+                    'controls_label' => 'Projekt lapozó',
+                    'prev_label' => 'Előző projekt',
+                    'next_label' => 'Következő projekt',
+                    'items' => [
+                        [
+                            'tag' => 'Weboldal + rendelés',
+                            'title' => '🌯 GyrosCity',
+                            'text' => 'Éttermi weboldal online rendelési és fizetési folyamattal, gyorsabb vásárlói útra hangolva.',
+                            'url' => 'https://gyroscity.eu',
+                            'link' => 'Weboldal megtekintése',
+                        ],
+                        [
+                            'tag' => 'Foglalás + brand',
+                            'title' => '💈 ZCutzBarber',
+                            'text' => 'Barber oldal online időpontfoglalással, erős vizuális világgal és egyszerűbb ügyfélúttal.',
+                            'url' => 'https://zcutzbarber.com',
+                            'link' => 'Weboldal megtekintése',
+                        ],
+                        [
+                            'tag' => 'Hardver + stabilitás',
+                            'title' => '🧰 Hardveres megoldások',
+                            'text' => 'Egyedi gépépítés, bővítés és diagnosztika úgy, hogy a végeredmény tartósan megbízható legyen.',
+                            'url' => null,
+                            'link' => null,
+                        ],
+                        [
+                            'tag' => 'Napi IT háttér',
+                            'title' => '🧠 Informatikai támogatás',
+                            'text' => 'Mindennapi hibakezelés, karbantartás és technikai segítség, hogy ne akadjon meg a működésed.',
+                            'url' => null,
+                            'link' => null,
+                        ],
+                    ],
+                ],
+                'contact' => [
+                    'title' => 'Kapcsolat',
+                    'lead' => 'Ha van egy ötleted, elakadásod vagy kinőtt rendszered, írj nyugodtan. Átnézem, megmondom mi lehet a jó irány, és közösen kitaláljuk a következő lépést.',
+                    'email_label' => 'E-mail',
+                    'linkedin_label' => 'LinkedIn',
+                    'linkedin_link' => 'LinkedIn profil megnyitása',
+                    'instagram_label' => 'Instagram',
+                    'facebook_label' => 'Facebook',
+                    'success' => '✅ Köszönöm! Az üzeneted megérkezett.',
+                    'error' => '❌ Hiba történt az üzenetküldés során. Próbáld újra!',
+                    'form_title' => '📨 Írd meg, miben segíthetek',
+                    'name' => 'Név',
+                    'message' => 'Üzenet...',
+                    'submit' => '📩 Küldés',
+                ],
+                'typewriter_sets' => [
+                    ["> Rendszer inicializálása...", "> Üzleti megoldások betöltése...", "> Technológiák aktiválva...", "> Állapot: Készen a közös munkára ✅", " Helló, ez itt az én digitális műhelyem 👋"],
+                    ["> 📡 Kapcsolat indítása...", "> Portfólió modul betöltve", "> Rendszerek online ✅", "> Interfész megnyitása...", " Nézz körül, itt valódi megoldások készülnek 🙌"],
+                    ["> 🔎 Diagnosztika...", "> Nincsenek kritikus hibák", "> Fejlesztői környezet aktív", "> Betöltés 100% ✔️", " Üdv, indulhatunk 🌐"],
+                    ["> 🗂️ Adatok előkészítése...", "> Profil betöltve", "> Projektmód aktiválva ✅", " Jó helyen jársz, ha profi rendszert akarsz 🚀"],
+                ],
+                'preloader_sets' => [
+                    ["> 👋 Üdvözöllek!", "  Jó, hogy itt vagy 😊", "➡️ Digitális műhely indítása... 🟢"],
+                    ["> 🤖 Helló!", "  Rendszerek előkészítése folyamatban 🙌", "➡️ Csatlakozás..."],
+                    ["> 🌟 Portfólió indítása", "  Megoldások betöltése ✨", "➡️ Kezdünk..."],
+                    ["> 🎉 Minden készen áll", "  Mehet a következő projekt 😎", "➡️ Belépés... 🚀"],
+                ],
+            ],
+            'skills' => [
+                'hero_title' => 'Technológiák és szakmai háttér',
+                'hero_text' => 'Itt találod részletesebben, milyen eszközökkel és rendszerekkel dolgozom. Ha neked inkább az a fontos, hogy miben tudok segíteni, a főoldalon rövidebben és ügyfélbarátabban is végigvezetlek rajta.',
+                'primary_cta' => '📩 Beszéljünk a projektedről',
+                'secondary_cta' => '🚀 Vissza a projektekhez',
+                'back_home' => '⬅ Vissza a főoldalra',
+                'footer_title' => 'Ha van egy konkrét elképzelésed',
+                'footer_text' => 'Nem kell előre tudnod, milyen stack kell hozzá. Elég, ha elmondod a célt, én segítek jó irányba bontani a technikai oldalt.',
+                'typewriter_sets' => [
+                    ["> Stack betöltése...", "> Webes rendszerek készen", "> Automatizálás aktív", "> IT háttér online", " Nézd meg részletesen, mivel dolgozom 👇"],
+                    ["> Technológiák inicializálása...", "> Projektekhez használt eszközök listázva", "> Rendszer stabil ✅", " Itt a részletes szakmai háttér"],
+                ],
+            ],
+        ],
+        'en' => [
+            'meta' => [
+                'home' => [
+                    'title' => 'Papp Zoltán – Web Developer and Digital Solutions for Businesses',
+                    'description' => 'Websites, webshops, booking systems, and automation for businesses. I do not just build a nice interface, but a practical digital solution that actually works.',
+                ],
+                'skills' => [
+                    'title' => 'Papp Zoltán – Technologies and Technical Background',
+                    'description' => 'A detailed overview of the technologies and areas I use across web, automation, and IT projects.',
+                ],
+            ],
+            'nav' => [
+                'about' => 'About',
+                'services' => 'Services',
+                'projects' => 'Projects',
+                'skills' => 'Tech Stack',
+                'contact' => 'Contact',
+            ],
+            'home' => [
+                'profile_alt' => 'Profile photo of Zoltán Papp',
+                'hero_title' => 'Web development that works for business',
+                'hero_text' => 'I build fast, clear websites and web systems for businesses.',
+                'hero_note' => 'AI + automation and a reliable technical setup help make the whole operation smoother.',
+                'proof_chip' => 'WEB + AI + AUTOMATION',
+                'proof_title' => 'The three main areas I work in',
+                'proof_text' => 'For me, the website is often just the starting point. The real value comes when the interface, automation, and technical setup work together.',
+                'proof_footer' => 'That way you get more than a nice-looking site. You get a better-built digital system.',
+                'highlights' => [
+                    'Web development',
+                    'AI + automation',
+                    'Devices & technical setup',
+                ],
+                'proof_cards' => [
+                    [
+                        'title' => 'Web development',
+                        'text' => 'Websites, landing pages, webshops, booking systems, and custom web features built with business goals in mind.',
+                    ],
+                    [
+                        'title' => 'AI + automation',
+                        'text' => 'Repeated tasks, forms, replies, notifications, or admin flows can be simplified with AI and automation.',
+                    ],
+                    [
+                        'title' => 'Devices & technical setup',
+                        'text' => 'If the system also needs reliable devices, smoother operation, or technical cleanup behind the scenes, I can help with that too.',
+                    ],
+                ],
+                'actions' => [
+                    'primary' => '📩 Let\'s talk about your project',
+                    'secondary' => '💻 Technical background',
+                    'tertiary' => '🚀 See my work',
+                ],
+                'services' => [
+                    'title' => 'Services',
+                    'lead' => 'My main focus is web development: websites and systems that not only look good, but genuinely support how your business works. When needed, I can also take care of the technical side behind them.',
+                    'items' => [
+                        [
+                            'title' => '💻 Web Development & Automation',
+                            'text' => 'If you need a modern website, online booking, a webshop, or something that removes repetitive admin work from your day, I can help. The goal is always to make your business simpler, faster, and more professional to run.',
+                        ],
+                        [
+                            'title' => '🛠️ Device Support',
+                            'text' => 'If a machine needs upgrading, troubleshooting, or long-term stabilization, I can help there too. This is especially useful when a web project also needs the surrounding technical environment to be sorted out.',
+                        ],
+                        [
+                            'title' => '🌐 Network & Technical Infrastructure',
+                            'text' => 'If a business needs stable networking, better Wi‑Fi, or a cleaner technical setup behind its web systems, I can help with that in a practical way.',
+                        ],
+                        [
+                            'title' => '📱 Devices & Day-to-Day IT Support',
+                            'text' => 'If the devices, software, or settings behind your daily work are causing friction, I can help get them back into a fast and usable state.',
+                        ],
+                        [
+                            'title' => '💽 Software Setup',
+                            'text' => 'Software installation and setup done properly, so you do not have to waste hours figuring everything out. You get a machine back that is actually ready to use.',
+                        ],
+                        [
+                            'title' => '💾 Backup & Data Security',
+                            'text' => 'Backups, recovery plans, password management, and practical security hygiene. Data only has real value if it can be restored when it matters.',
+                        ],
+                        [
+                            'title' => '🛒 Device Purchase Consulting',
+                            'text' => 'I help you buy well, not just spend more. Recommendations are based on needs, budget, and actual use, with setup support included if needed.',
+                        ],
+                        [
+                            'title' => '🔐 Technical Consulting',
+                            'text' => 'If you need to decide what kind of system, development work, or technical setup actually makes sense, I can help you choose a clear and practical direction.',
+                        ],
+                    ],
+                ],
+                'projects' => [
+                    'title' => 'Projects',
+                    'lead' => 'A few examples of how technology becomes a real business tool.',
+                    'hint' => 'On mobile, swipe sideways or use the arrows to browse the projects.',
+                    'controls_label' => 'Project slider controls',
+                    'prev_label' => 'Previous project',
+                    'next_label' => 'Next project',
+                    'items' => [
+                        [
+                            'tag' => 'Website + ordering',
+                            'title' => '🌯 GyrosCity',
+                            'text' => 'Restaurant website with online ordering and payment flow built for faster customer action.',
+                            'url' => 'https://gyroscity.eu',
+                            'link' => 'View Website',
+                        ],
+                        [
+                            'tag' => 'Booking + branding',
+                            'title' => '💈 ZCutzBarber',
+                            'text' => 'Barbershop site with online booking, strong visuals, and a smoother client journey.',
+                            'url' => 'https://zcutzbarber.com',
+                            'link' => 'View Website',
+                        ],
+                        [
+                            'tag' => 'Hardware + stability',
+                            'title' => '🧰 Hardware Solutions',
+                            'text' => 'Custom builds, upgrades, and diagnostics focused on long-term reliability.',
+                            'url' => null,
+                            'link' => null,
+                        ],
+                        [
+                            'tag' => 'Day-to-day IT',
+                            'title' => '🧠 IT Support',
+                            'text' => 'Ongoing troubleshooting, maintenance, and practical support to keep work moving.',
+                            'url' => null,
+                            'link' => null,
+                        ],
+                    ],
+                ],
+                'contact' => [
+                    'title' => 'Contact',
+                    'lead' => 'If you have an idea, a blocker, or a system you have outgrown, feel free to reach out. I will review it, suggest a good direction, and we can figure out the next step together.',
+                    'email_label' => 'E-mail',
+                    'linkedin_label' => 'LinkedIn',
+                    'linkedin_link' => 'Open LinkedIn profile',
+                    'instagram_label' => 'Instagram',
+                    'facebook_label' => 'Facebook',
+                    'success' => '✅ Thank you! Your message has been received.',
+                    'error' => '❌ Error sending message. Please try again!',
+                    'form_title' => '📨 Tell me what you need',
+                    'name' => 'Name',
+                    'message' => 'Message...',
+                    'submit' => '📩 Send',
+                ],
+                'typewriter_sets' => [
+                    ["> Initializing system...", "> Loading business-ready solutions...", "> Tech stack activated...", "> Status: Ready to build ✅", " Welcome to my digital workshop 👋"],
+                    ["> 📡 Starting connection...", "> Portfolio module online", "> Systems ready ✅", "> Interface unlocked...", " Take a look around, this is where ideas become products 🙌"],
+                    ["> 🔎 Running diagnostics...", "> No critical errors found", "> Dev environment active", "> Load 100% ✔️", " Ready when you are 🌐"],
+                    ["> 🗂️ Preparing data...", "> Profile loaded", "> Project mode enabled ✅", " You are in the right place for clean and powerful solutions 🚀"],
+                ],
+                'preloader_sets' => [
+                    ["> 👋 Welcome!", "  Glad you're here 😊", "➡️ Starting the digital workshop... 🟢"],
+                    ["> 🤖 Hello!", "  Preparing systems and tools 🙌", "➡️ Connecting..."],
+                    ["> 🌟 Portfolio booting", "  Loading solutions ✨", "➡️ Starting up..."],
+                    ["> 🎉 Everything is ready", "  Time to build something great 😎", "➡️ Entering... 🚀"],
+                ],
+            ],
+            'skills' => [
+                'hero_title' => 'Technologies and Technical Background',
+                'hero_text' => 'This page gives a deeper look into the tools and systems I work with. If you only need the client-friendly overview, the homepage walks through it in a shorter way.',
+                'primary_cta' => '📩 Let\'s talk about your project',
+                'secondary_cta' => '🚀 Back to projects',
+                'back_home' => '⬅ Back to home',
+                'footer_title' => 'If you already have an idea',
+                'footer_text' => 'You do not need to know the right stack in advance. It is enough to describe the goal, and I can help turn that into a practical technical direction.',
+                'typewriter_sets' => [
+                    ["> Loading stack...", "> Web systems ready", "> Automation active", "> IT background online", " Take a closer look at the tools I use 👇"],
+                    ["> Initializing technologies...", "> Project toolkit listed", "> System stable ✅", " Here is the detailed technical background"],
+                ],
+            ],
+        ],
+    ],
+];

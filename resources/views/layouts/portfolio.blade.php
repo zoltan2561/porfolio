@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="{{ $lang }}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ $meta['title'] }}</title>
+    <meta name="description" content="{{ $meta['description'] }}">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="{{ $canonicalUrl }}">
+    <link rel="alternate" hreflang="hu" href="{{ $pageName === 'home' ? $homeHuUrl : $skillsHuUrl }}">
+    <link rel="alternate" hreflang="en" href="{{ $pageName === 'home' ? $homeEnUrl : $skillsEnUrl }}">
+    <link rel="alternate" hreflang="x-default" href="{{ $pageName === 'home' ? $homeHuUrl : $skillsHuUrl }}">
+
+    <meta property="og:title" content="{{ $meta['title'] }}">
+    <meta property="og:description" content="{{ $meta['description'] }}">
+    <meta property="og:image" content="{{ $ogImage }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ $currentUrl }}">
+    <meta property="og:locale" content="{{ $lang === 'hu' ? 'hu_HU' : 'en_US' }}">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $meta['title'] }}">
+    <meta name="twitter:description" content="{{ $meta['description'] }}">
+    <meta name="twitter:image" content="{{ $ogImage }}">
+
+    <link rel="icon" href="{{ $favicon }}" type="image/png">
+    <script type="application/ld+json">{!! $schemaJson !!}</script>
+    <link rel="stylesheet" href="{{ $assets['css'] }}">
+</head>
+
+<body>
+    @if ($preloaderLines)
+        <div id="preloader">
+            <pre id="preloader-text"></pre>
+        </div>
+    @endif
+
+    <canvas id="matrix"></canvas>
+
+    <div class="language-switch">
+        <a href="{{ $pageName === 'home' ? $homeHuUrl : $skillsHuUrl }}" class="{{ $lang === 'hu' ? 'active' : '' }}">HUN</a> |
+        <a href="{{ $pageName === 'home' ? $homeEnUrl : $skillsEnUrl }}" class="{{ $lang === 'en' ? 'active' : '' }}">ENG</a>
+    </div>
+
+    <div class="nav-container">
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <nav id="main-nav">
+            <a href="{{ $links['about'] }}">{{ $nav['about'] }}</a>
+            <a href="{{ $links['services'] }}">{{ $nav['services'] }}</a>
+            <a href="{{ $links['projects'] }}">{{ $nav['projects'] }}</a>
+            <a href="{{ $skillsUrl }}" class="{{ $pageName === 'skills' ? 'active' : '' }}">{{ $nav['skills'] }}</a>
+            <a href="{{ $links['contact'] }}">{{ $nav['contact'] }}</a>
+        </nav>
+    </div>
+
+    <div class="typewriter-container fade-in">
+        <pre id="typewriter"></pre>
+    </div>
+
+    @yield('content')
+
+    <script>
+        const typewriterLines = @json($typewriterLines);
+        const preloaderLines = @json($preloaderLines);
+    </script>
+    <script src="{{ $assets['js'] }}"></script>
+</body>
+
+</html>
