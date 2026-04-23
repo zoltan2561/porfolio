@@ -12,39 +12,39 @@ $canonicalUrl = $baseUrl . '/';
 
 $meta = [
   'hu' => [
-    'title' => 'Papp Zoltán – Webshop, webfejlesztés és IT megoldások vállalkozásoknak',
+    'title' => 'Papp Zoltán – Webfejlesztő és IT szakember vállalkozásoknak',
     
-    'description' => 'Webshop készítés, időpontfoglaló rendszer, üzleti weboldal fejlesztés és komplex IT megoldások vállalkozások számára országszerte. Stabil, gyors és bővíthető digitális rendszerek szoftveres és hardveres háttérrel.',
+    'description' => 'Weboldalak, webshopok, foglalási rendszerek, automatizálás és megbízható technikai háttér egy kézből. Fő fókuszban a vállalkozásoknak épített webes megoldások, kiegészítve gyakorlati IT és hardveres támogatással.',
     
-    'heroTitle' => 'Komplex szoftveres és hardveres IT megoldások',
+    'heroTitle' => 'Webes megoldások vállalkozásoknak, stabil technikai háttérrel',
     
-    'heroText' => 'Webshopokat, időpontfoglalási rendszereket és professzionális üzleti weboldalakat fejlesztek, emellett teljes körű szoftveres és hardveres megoldásokat tervezek és valósítok meg. A célom a stabil, megbízható és hosszú távon bővíthető digitális működés.',
+    'heroText' => 'Főként vállalkozásoknak készítek weboldalakat, webshopokat, foglalási rendszereket és egyedi fejlesztéseket, amik nemcsak jól néznek ki, hanem üzletileg is működnek. Emellett hardveres és általános IT feladatokban is tudok segíteni, ha egy projekt mögé megbízható technikai háttér kell.',
     
-    'videoTitle' => 'Hogyan dolgozom a háttérben?',
+    'videoTitle' => 'Pár másodperc arról, hogyan dolgozom',
     
-    'videoText' => 'Egy rövid betekintés a mindennapi munkámba – fejlesztés, rendszerépítés, eszközszerviz és technikai problémamegoldás.',
+    'videoText' => 'Egy rövid betekintés a munkámba, ahol az ötletből valódi, használható megoldás lesz.',
     
-    'primaryCta' => '📩 Kérek ajánlatot',
-    'secondaryCta' => '💼 Szolgáltatásaim',
-    'tertiaryCta' => 'Munkáim »'
+    'primaryCta' => '📩 Beszéljünk a projektedről',
+    'secondaryCta' => '💻 Technológiák, amiket ismerek',
+    'tertiaryCta' => '🚀 Nézd meg a munkáim'
   ],
 
   'en' => [
-  'title' => 'Papp Zoltán – Web Development and IT Solutions',
+  'title' => 'Papp Zoltán – Web Developer and IT Specialist for Businesses',
   
-  'description' => 'Webshop development, booking systems, business websites and comprehensive IT solutions for companies worldwide. Stable, scalable digital systems with both software and hardware expertise.',
+  'description' => 'Websites, webshops, booking systems, automation, and reliable technical support from one place. My main focus is building web solutions for businesses, backed by practical IT and hardware expertise when needed.',
   
-  'heroTitle' => 'Comprehensive Software and Hardware IT Solutions',
+  'heroTitle' => 'Web solutions for businesses, backed by reliable technical support',
   
-  'heroText' => 'I develop webshops, booking systems and professional business websites, while also delivering complete software and hardware solutions. My goal is to build stable, reliable and scalable digital systems that support long-term business growth.',
+  'heroText' => 'I mainly build websites, webshops, booking systems, and custom web solutions for businesses that need more than just a nice design. I also help with hardware and general IT tasks when a project needs dependable technical support behind it.',
   
-  'videoTitle' => 'How I Work Behind the Scenes',
+  'videoTitle' => 'A quick look at how I work',
   
-  'videoText' => 'A short glimpse into my daily work – development, system building, hardware service and technical problem solving.',
+  'videoText' => 'A short look into my work, where ideas turn into real and usable solutions.',
   
-  'primaryCta' => '📩 Request a Quote',
-  'secondaryCta' => '💼 My Services',
-  'tertiaryCta' => 'My Work »'
+  'primaryCta' => '📩 Let\'s talk about your project',
+  'secondaryCta' => '💻 Technologies I know',
+  'tertiaryCta' => '🚀 See my work'
 ]
 ];
 
@@ -139,7 +139,7 @@ $schema = [
       <a href="#rolam"><?php echo ($lang === 'hu') ? 'Rólam' : 'About'; ?></a>
       <a href="#szolgaltatasok"><?php echo ($lang === 'hu') ? 'Szolgáltatások' : 'Services'; ?></a>
       <a href="#projektek"><?php echo ($lang === 'hu') ? 'Projektek' : 'Projects'; ?></a>
-      <a href="#technologiak"><?php echo ($lang === 'hu') ? 'Tech Stackem' : 'My Tech Stack'; ?></a>
+      <a href="#technologiak"><?php echo ($lang === 'hu') ? 'Technológiák' : 'Tech Stack'; ?></a>
       <a href="#kapcsolat"><?php echo ($lang === 'hu') ? 'Kapcsolat' : 'Contact'; ?></a>
     </nav>
 
@@ -152,58 +152,63 @@ $schema = [
     <img src="icons/profile-bw.jpg" alt="<?php echo ($lang === 'hu') ? 'Papp Zoltán profilkép' : 'Profile photo of Zoltán Papp'; ?>" loading="lazy" width="150" height="150">
     <h1><?php echo $meta[$lang]['heroTitle']; ?></h1>
     <p><?php echo $meta[$lang]['heroText']; ?></p>
-    <div class="hero-video-placeholder" aria-label="Intro video placeholder">
+    <div class="hero-video-placeholder fade-in" aria-label="Intro video placeholder">
+      <span class="video-chip"><?php echo ($lang === 'hu') ? 'SHOWREEL' : 'SHOWREEL'; ?></span>
       <h3><?php echo $meta[$lang]['videoTitle']; ?></h3>
-      <video controls preload="metadata" class="hero-video">
+      <video id="intro-video" controls preload="metadata" class="hero-video" playsinline muted poster="icons/og.jpg">
         <source src="promo.mp4" type="video/mp4">
         <?php echo ($lang === 'hu') ? 'A böngésződ nem támogatja a videó lejátszást.' : 'Your browser does not support video playback.'; ?>
       </video>
+      <p class="video-status" id="video-status"><?php echo ($lang === 'hu') ? 'Ha a videó nem indul el, a lejátszás gombbal manuálisan is elindíthatod.' : 'If the video does not start, you can launch it manually with the play button.'; ?></p>
       <p><?php echo $meta[$lang]['videoText']; ?></p>
     </div>
-    <a href="#kapcsolat" class="cta-button"><?php echo $meta[$lang]['primaryCta']; ?></a>
-    <a href="#technologiak" class="cta-button"><?php echo $meta[$lang]['secondaryCta']; ?></a>
-    <a href="#projektek" class="cta-button"><?php echo $meta[$lang]['tertiaryCta']; ?></a>
+    <div class="hero-actions">
+      <a href="#kapcsolat" class="cta-button"><?php echo $meta[$lang]['primaryCta']; ?></a>
+      <a href="#technologiak" class="cta-button"><?php echo $meta[$lang]['secondaryCta']; ?></a>
+      <a href="#projektek" class="cta-button"><?php echo $meta[$lang]['tertiaryCta']; ?></a>
+    </div>
   </div>
 
 
   <section id="szolgaltatasok">
     <h2><?php echo ($lang === 'hu') ? 'Szolgáltatások' : 'Services'; ?></h2>
+    <p class="section-lead"><?php echo ($lang === 'hu') ? 'A fő fókuszom a vállalkozásoknak készített webes megoldásokon van, de ha kell, a mögöttes technikai és hardveres oldalt is átlátom és összerakom.' : 'My main focus is building web solutions for businesses, while also covering the technical and hardware side when a project needs it.'; ?></p>
     <div class="services">
 
       <div class="service">
         <h3>💻 <?php echo ($lang === 'hu') ? 'Weboldalak, programok és automatizálás' : 'Websites, Software & Automation'; ?></h3>
         <p>
           <?php echo ($lang === 'hu')
-            ? 'Webfejlesztés, egyedi programok és automatizálási megoldások: olyan rendszerek, amelyek kiváltják a manuális, időigényes feladatokat. Legyen szó bemutatkozó weboldalról, webshopról vagy belső céges alkalmazásról – mindig a hatékonyságot és a profi online jelenlétet helyezem előtérbe.'
-            : 'Web development, custom software, and automation solutions: systems designed to replace manual, time-consuming tasks. From portfolio websites and e-shops to internal business applications – I always prioritize efficiency and a professional online presence.'; ?>
+            ? 'Ha kell egy modern weboldal, online foglalás vagy valami, ami levesz adminisztrációt a válladról, ebben tudok segíteni. A cél mindig az, hogy egyszerűbb és gördülékenyebb legyen a működésed.'
+            : 'If you need a modern website, online booking, or something that removes repetitive admin work from your day, I can help. The goal is always to make your business easier to run.'; ?>
         </p>
       </div>
 
 
       <div class="service">
-        <h3>🛠️ <?php echo ($lang === 'hu') ? 'Számítógép szerviz' : 'Computer Repair'; ?></h3>
+        <h3>🛠️ <?php echo ($lang === 'hu') ? 'Hardveres támogatás' : 'Hardware Support'; ?></h3>
         <p>
           <?php echo ($lang === 'hu')
-            ? 'Laptopok és asztali gépek javítása, újratelepítés, gyorsítás, tisztítás és  optimalizálás – hogy eszközeid újra gyorsan és megbízhatóan működjenek.'
-            : 'Laptop and desktop repair, reinstallations, SSD upgrades, cleaning and  optimization – so your devices run fast and reliably again.'; ?>
+            ? 'Ha egy gépet bővíteni, rendbe tenni vagy stabilabbá tenni kell, abban is tudok segíteni. Ez jó kiegészítés akkor is, ha a webes projekt mellé a teljes technikai környezetet is össze kell rakni.'
+            : 'If a machine needs upgrading, troubleshooting, or long-term stabilization, I can help there too. This is especially useful when a web project also needs the surrounding technical environment to be sorted out.'; ?>
         </p>
       </div>
 
       <div class="service">
-        <h3>🌐 <?php echo ($lang === 'hu') ? 'Hálózatépítés' : 'Networking'; ?></h3>
+        <h3>🌐 <?php echo ($lang === 'hu') ? 'Hálózat és technikai háttér' : 'Network & Technical Infrastructure'; ?></h3>
         <p>
           <?php echo ($lang === 'hu')
-            ? 'Gyors és stabil internet bárhol: Wi-Fi és LAN hálózat kiépítés, router konfigurálás, hibajavítás, okosotthon eszközök beállítása.'
-            : 'Fast and stable internet anywhere: Wi-Fi and LAN setup, router configuration, troubleshooting, and smart home device integration.'; ?>
+            ? 'Ha egy vállalkozásnál a webes rendszer mellé stabil hálózat, jobb Wi-Fi vagy rendezettebb technikai háttér kell, ebben is tudok gyakorlati segítséget adni.'
+            : 'If a business needs stable networking, better Wi-Fi, or a cleaner technical setup behind its web systems, I can help with that in a practical way.'; ?>
         </p>
       </div>
 
       <div class="service">
-        <h3>📱 <?php echo ($lang === 'hu') ? 'Mobil szerviz' : 'Mobile Service'; ?></h3>
+        <h3>📱 <?php echo ($lang === 'hu') ? 'Eszközök és napi IT támogatás' : 'Devices & Day-to-Day IT Support'; ?></h3>
         <p>
           <?php echo ($lang === 'hu')
-            ? 'Kijelző- és akkumulátorcsere, szoftverfrissítés és optimalizálás, tárhely felszabadítás – hogy a telefonod újra olyan legyen, mint új korában.'
-            : 'Screen and battery replacement, software updates and optimization, storage cleanup – making your phone feel brand new.'; ?>
+            ? 'Ha a napi működésedhez használt eszközök, szoftverek vagy beállítások körül van elakadás, segítek gyorsan használható állapotba hozni őket.'
+            : 'If the devices, software, or settings behind your daily work are causing friction, I can help get them back into a fast and usable state.'; ?>
         </p>
       </div>
 
@@ -211,8 +216,8 @@ $schema = [
         <h3>💽 <?php echo ($lang === 'hu') ? 'Szoftver beállítás' : 'Software Setup'; ?></h3>
         <p>
           <?php echo ($lang === 'hu')
-            ? 'Windows és programok telepítése, frissítése, vírusvédelem és optimalizálás – teljes körű szoftveres támogatás, hogy időt és idegeskedést spórolj.'
-            : 'Installation and configuration of Windows and software, updates, antivirus protection and optimization – saving you time and frustration.'; ?>
+            ? 'Programok telepítése, beállítása és rendberakása úgy, hogy ne neked kelljen vele órákig szenvedni. Olyan gépet kapsz vissza, ami tényleg használatra kész.'
+            : 'Software installation and setup done properly, so you do not have to waste hours figuring everything out. You get a machine back that is actually ready to use.'; ?>
         </p>
       </div>
 
@@ -220,8 +225,8 @@ $schema = [
         <h3>💾 <?php echo ($lang === 'hu') ? 'Biztonsági mentés és adatvédelem' : 'Backup & Data Security'; ?></h3>
         <p>
           <?php echo ($lang === 'hu')
-            ? 'Megbízható biztonsági mentési rendszerek (felhő, NAS, külső HDD), vírusvédelem és jelszókezelés – hogy adataid mindig biztonságban legyenek.'
-            : 'Reliable backup systems (cloud, NAS, external drives), antivirus and password management – keeping your data safe at all times.'; ?>
+            ? 'Mentés, helyreállítás, jelszókezelés és alap biztonsági higiénia. Az adat akkor érték, ha vissza is lehet hozni, amikor tényleg szükség van rá.'
+            : 'Backups, recovery plans, password management, and practical security hygiene. Data only has real value if it can be restored when it matters.'; ?>
         </p>
       </div>
 
@@ -229,17 +234,17 @@ $schema = [
         <h3>🛒 <?php echo ($lang === 'hu') ? 'Eszközvásárlási tanácsadás' : 'Device Purchase Consulting'; ?></h3>
         <p>
           <?php echo ($lang === 'hu')
-            ? 'Keret és igény alapján javaslat PC/laptop/telefon/NAS eszközökre, ár-érték arányra optimalizálva – beszerzésben és beüzemelésben is segítek, hogy biztosan jó döntést hozz.'
-            : 'Recommendations for PCs/laptops/phones/NAS based on your budget and needs, optimized for value – I also help with procurement and setup so you make the right choice.'; ?>
+            ? 'Segítek jól vásárolni, nem csak sokat költeni. Igény, keret és használat alapján ajánlok eszközt, és a beüzemelésben is ott vagyok.'
+            : 'I help you buy well, not just spend more. Recommendations are based on needs, budget, and actual use, with setup support included if needed.'; ?>
         </p>
       </div>
 
       <div class="service">
-        <h3>🔐 <?php echo ($lang === 'hu') ? 'IT tanácsadás' : 'IT Consulting'; ?></h3>
+        <h3>🔐 <?php echo ($lang === 'hu') ? 'Technikai tanácsadás' : 'Technical Consulting'; ?></h3>
         <p>
           <?php echo ($lang === 'hu')
-            ? 'Személyre szabott IT megoldások cégeknek és magánszemélyeknek: kiberbiztonság, rendszertervezés, költséghatékony digitális fejlesztések.'
-            : 'Tailored IT solutions for individuals and businesses: cybersecurity, infrastructure planning, and cost-effective digital transformation.'; ?>
+            ? 'Ha azt kell eldönteni, milyen rendszerre, fejlesztésre vagy technikai háttérre van valóban szükséged, segítek tisztán látni és jó irányba indulni.'
+            : 'If you need to decide what kind of system, development work, or technical setup actually makes sense, I can help you choose a clear and practical direction.'; ?>
         </p>
       </div>
 
@@ -248,23 +253,24 @@ $schema = [
 
   <section id="projektek">
     <h2><?php echo ($lang === 'hu') ? 'Projektek' : 'Projects'; ?></h2>
+    <p class="section-lead"><?php echo ($lang === 'hu') ? 'Néhány példa arra, hogyan lesz a technikából valódi üzleti eszköz.' : 'A few examples of how technology becomes a real business tool.'; ?></p>
     <div class="projects">
       <div class="project">
         <h3>🌯 GyrosCity</h3>
-        <p><?php echo ($lang === 'hu') ? 'Gyorsétterem weboldal, webshop funkciók, online fizetés,és még rengeteg extra' : 'Fast-food restaurant website, webshop features, online payment,and lot of extra'; ?></p> <a href="https://gyroscity.eu" target="_blank" rel="noopener noreferrer"><?php echo ($lang === 'hu') ? 'Weboldal megtekintése' : 'View Website'; ?></a>
+        <p><?php echo ($lang === 'hu') ? 'Éttermi weboldal rendelési és online fizetési folyamattal, gyors kiszolgálásra és egyszerű konverzióra hangolva.' : 'Restaurant website with ordering and online payment flow, designed for smooth conversions and quick customer action.'; ?></p> <a href="https://gyroscity.eu" target="_blank" rel="noopener noreferrer"><?php echo ($lang === 'hu') ? 'Weboldal megtekintése' : 'View Website'; ?></a>
       </div>
       <div class="project">
         <h3>💈 ZCutzBarber</h3>
-        <p><?php echo ($lang === 'hu') ? 'Fodrász weboldal időpontfoglalással és galériával.' : 'Barbershop website with booking and gallery.'; ?></p>
+        <p><?php echo ($lang === 'hu') ? 'Barber brandre szabott oldal online foglalással, erős vizuális jelenléttel és gördülékeny ügyfélúttal.' : 'Brand-focused barbershop site with online booking, strong visuals, and a smoother customer journey.'; ?></p>
         <a href="https://zcutzbarber.com" target="_blank" rel="noopener noreferrer"><?php echo ($lang === 'hu') ? 'Weboldal megtekintése' : 'View Website'; ?></a>
       </div>
       <div class="project">
         <h3>🧰 <?php echo ($lang === 'hu') ? 'Hardveres megoldások' : 'Hardware Solutions'; ?></h3>
-        <p><?php echo ($lang === 'hu') ? 'Számtalan sikeres hardveres fejlesztés és javítás (pl. gépépítés, diagnosztika, tuning).' : 'Various successful hardware builds and repairs (e.g. PC building, diagnostics, tuning).'; ?></p>
+        <p><?php echo ($lang === 'hu') ? 'Személyre szabott gépépítések, bővítések, diagnosztika és üzembiztos működésre hangolt hardveres támogatás.' : 'Custom PC builds, upgrades, diagnostics, and hardware support focused on stable long-term performance.'; ?></p>
       </div>
       <div class="project">
         <h3>🧠 <?php echo ($lang === 'hu') ? 'Informatikai támogatás' : 'IT Support'; ?></h3>
-        <p><?php echo ($lang === 'hu') ? 'Komplex rendszerek telepítése, konfigurálása és karbantartása magán- és céges ügyfeleknek.' : 'Installation, configuration and maintenance of complex systems for private and corporate clients.'; ?></p>
+        <p><?php echo ($lang === 'hu') ? 'Napi működést támogató IT háttér, hibakezelés, rendszerkarbantartás és átlátható technikai támogatás magán- és üzleti oldalon.' : 'Reliable day-to-day IT support, troubleshooting, maintenance, and clear technical guidance for both private and business clients.'; ?></p>
       </div>
     </div>
   </section>
@@ -280,6 +286,7 @@ $schema = [
   <section id="kapcsolat">
 
     <h2><?php echo ($lang === 'hu') ? 'Kapcsolat' : 'Contact'; ?></h2>
+    <p class="contact-lead"><?php echo ($lang === 'hu') ? 'Ha van egy ötleted, elakadásod vagy kinőtt rendszered, írj nyugodtan. Átnézem, megmondom mi lehet a jó irány, és közösen kitaláljuk a következő lépést.' : 'If you have an idea, a blocker, or a system you have outgrown, feel free to reach out. I will review it, suggest a good direction, and we can figure out the next step together.'; ?></p>
     <div class="contact-info">
       <p>📧 <strong>E-mail:</strong>
         <a href="mailto:m&#101;&#108;&#111;&#64;&#112;&#122;&#111;&#108;&#105;&#46;&#99;&#111;&#109;">
@@ -287,9 +294,9 @@ $schema = [
         </a>
       </p>
 
-      <p>💼 <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/papp-zoltán-41a7a4172/" target="_blank" rel="noopener noreferrer">linkedin.com/in/zoltan</a></p>
-      <p>📷 <strong>Instagram:</strong> <a href="https://www.instagram.com/zoltan.ppp/#" target="_blank" rel="noopener noreferrer">@zoltan</a></p>
-      <p>📘 <strong>Facebook:</strong> <a href="https://facebook.com/ztech20" target="_blank" rel="noopener noreferrer">facebook.com/zoltan</a></p>
+      <p>💼 <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/papp-zoltán-41a7a4172/" target="_blank" rel="noopener noreferrer"><?php echo ($lang === 'hu') ? 'LinkedIn profil megnyitása' : 'Open LinkedIn profile'; ?></a></p>
+      <p>📷 <strong>Instagram:</strong> <a href="https://www.instagram.com/zoltan.ppp/" target="_blank" rel="noopener noreferrer">@zoltan.ppp</a></p>
+      <p>📘 <strong>Facebook:</strong> <a href="https://facebook.com/ztech20" target="_blank" rel="noopener noreferrer">facebook.com/ztech20</a></p>
       <?php if (isset($_GET['success'])): ?>
         <p class="form-success"><?php echo ($lang === 'hu') ? '✅ Köszönöm! Az üzeneted megérkezett.' : '✅ Thank you! Your message has been received.'; ?></p>
       <?php elseif (isset($_GET['error'])): ?>
@@ -298,7 +305,7 @@ $schema = [
     </div>
 
     <form class="contact-form" method="POST" action="send.php">
-      <h3><?php echo ($lang === 'hu') ? '📨 Lépj kapcsolatba velem' : '📨 Get in Touch'; ?></h3>
+      <h3><?php echo ($lang === 'hu') ? '📨 Írd meg, miben segíthetek' : '📨 Tell me what you need'; ?></h3>
 
       <input type="hidden" name="lang" value="<?php echo htmlspecialchars($lang, ENT_QUOTES); ?>">
       <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
@@ -316,18 +323,18 @@ $schema = [
 
                             if ($lang === 'hu') {
                               $lines_hu = [
-                                ["> Rendszer inicializálása...", "> Biztonságos kapcsolat létrehozása...", "> Technológiák betöltése...", "> Állapot: Készen áll ✅", " Üdvözöllek a weboldalamon 👋"],
-                                ["> 📡 Kapcsolat indítása...", "> Hálózati modul betöltve", "> Portfólió aktív ✅", "> Interfész megnyitása...", " Helló, látogató! 🙌"],
-                                ["> 🔎 Diagnosztika...", "> Nincsenek hibák", "> Védelmi protokoll aktív", "> Betöltés 100% ✔️", " Üdv az oldalamon 🌐"],
-                                ["> 🗂️ Adatok előkészítése...", "> Profil betöltve", "> Portfólió online ✅", " Köszöntelek az oldalamon 🙋‍♂️"]
+                                ["> Rendszer inicializálása...", "> Üzleti megoldások betöltése...", "> Technológiák aktiválva...", "> Állapot: Készen a közös munkára ✅", " Helló, ez itt az én digitális műhelyem 👋"],
+                                ["> 📡 Kapcsolat indítása...", "> Portfólió modul betöltve", "> Rendszerek online ✅", "> Interfész megnyitása...", " Nézz körül, itt valódi megoldások készülnek 🙌"],
+                                ["> 🔎 Diagnosztika...", "> Nincsenek kritikus hibák", "> Fejlesztői környezet aktív", "> Betöltés 100% ✔️", " Üdv, indulhatunk 🌐"],
+                                ["> 🗂️ Adatok előkészítése...", "> Profil betöltve", "> Projektmód aktiválva ✅", " Jó helyen jársz, ha profi rendszert akarsz 🚀"]
                               ];
                               echo json_encode($lines_hu[array_rand($lines_hu)]);
                             } else {
                               $lines_en = [
-                                ["> Initializing system...", "> Establishing secure connection...", "> Loading tech stack...", "> Status: Ready ✅", " Welcome to my site 👋"],
-                                ["> 📡 Starting connection...", "> Network module online", "> Portfolio active ✅", "> Interface unlocked...", " Hello, visitor! Glad to have you here 🙌"],
-                                ["> 🔎 Running diagnostics...", "> No errors found", "> Security protocol enabled", "> Load 100% ✔️", " Enjoy browsing and feel at home 🌐"],
-                                ["> 🗂️ Preparing data...", "> Profile loaded", "> Portfolio online ✅", " Greetings and welcome to my portfolio 🙋‍♂️"]
+                                ["> Initializing system...", "> Loading business-ready solutions...", "> Tech stack activated...", "> Status: Ready to build ✅", " Welcome to my digital workshop 👋"],
+                                ["> 📡 Starting connection...", "> Portfolio module online", "> Systems ready ✅", "> Interface unlocked...", " Take a look around, this is where ideas become products 🙌"],
+                                ["> 🔎 Running diagnostics...", "> No critical errors found", "> Dev environment active", "> Load 100% ✔️", " Ready when you are 🌐"],
+                                ["> 🗂️ Preparing data...", "> Profile loaded", "> Project mode enabled ✅", " You are in the right place for clean and powerful solutions 🚀"]
                               ];
                               echo json_encode($lines_en[array_rand($lines_en)]);
                             }
@@ -338,17 +345,17 @@ $schema = [
     const preloaderLines = <?php
 
                             $lines_hu = [
-                              ["> 👋 Üdvözöllek!", "  Jó, hogy itt vagy 😊", "➡️ Indítás... 🟢"],
-                              ["> 🤖 Helló, látogató!", "  Örülök, hogy benéztél 🙌", "➡️ Csatlakozás folyamatban..."],
-                              ["> 🌟 Helló!", "  Örülök, hogy benéztél ✨", "➡️ Betöltés megkezdve..."],
-                              ["> 🎉 Helló, látogató!", " Üdvözöllek 😎", "➡️ Indulunk! 🚀"]
+                              ["> 👋 Üdvözöllek!", "  Jó, hogy itt vagy 😊", "➡️ Digitális műhely indítása... 🟢"],
+                              ["> 🤖 Helló!", "  Rendszerek előkészítése folyamatban 🙌", "➡️ Csatlakozás..."],
+                              ["> 🌟 Portfólió indítása", "  Megoldások betöltése ✨", "➡️ Kezdünk..."],
+                              ["> 🎉 Minden készen áll", "  Mehet a következő projekt 😎", "➡️ Belépés... 🚀"]
                             ];
 
                             $lines_en = [
-                              ["> 👋 Welcome!", "  Glad you're here 😊", "➡️ Starting... 🟢"],
-                              ["> 🤖 Hello, visitor!", "  Great to have you 🙌", "➡️ Connecting..."],
-                              ["> 🌟 Hello!", "  Happy to see you here ✨", "➡️ Loading started..."],
-                              ["> 🎉 Hey visitor!", "  Welcome! 😎", "➡️ Let's go! 🚀"]
+                              ["> 👋 Welcome!", "  Glad you're here 😊", "➡️ Starting the digital workshop... 🟢"],
+                              ["> 🤖 Hello!", "  Preparing systems and tools 🙌", "➡️ Connecting..."],
+                              ["> 🌟 Portfolio booting", "  Loading solutions ✨", "➡️ Starting up..."],
+                              ["> 🎉 Everything is ready", "  Time to build something great 😎", "➡️ Entering... 🚀"]
                             ];
 
                             echo json_encode(

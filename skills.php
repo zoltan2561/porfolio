@@ -1,5 +1,5 @@
 <section id="technologiak">
-  <h2>🧠 Technológiák, amelyekben otthon vagyok</h2>
+  <h2>🧠 Technológiák, amikkel dolgozom</h2>
 
   <h3>🚀 Core stack (fő fókusz)</h3>
   <ul>
@@ -63,5 +63,5 @@
     <li>CI/CD pipeline és automatikus tesztelés Docker környezetben</li>
   </ul>
 
-  <a href="docs/Papp Zoltán CV.pdf" class="cv-button" download>📄 CV letöltése (PDF)</a>
+  <a href="/cv.pdf" class="cv-button" download>📄 Önéletrajz letöltése (PDF)</a>
 </section>

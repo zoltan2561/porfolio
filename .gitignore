@@ -2,6 +2,7 @@
 mail.config.php
 ip_log.json
 counter_daily.txt
+/stats/
 
 
 # Composer vendor könyvtár
