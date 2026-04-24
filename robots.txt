@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://pzoli.com/sitemap.xml
