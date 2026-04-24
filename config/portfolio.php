@@ -46,7 +46,7 @@ return [
             ],
             'home' => [
                 'profile_alt' => 'Papp Zoltán profilkép',
-                'hero_title' => 'Webfejlesztés, ami üzletileg is működik',
+                'hero_title' => 'Webfejlesztés, ami üzletileg is működik ;)',
                 'hero_text' => 'Gyors, átlátható weboldalakat és rendszereket készítek vállalkozásoknak.',
                 'hero_note' => 'AI + automatizációval és stabil technikai háttérrel segítek egyszerűbbé tenni a működést.',
                 'proof_chip' => 'WEB + AI + AUTOMATIZÁLÁS',
