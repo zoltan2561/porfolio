@@ -8,9 +8,9 @@
     <meta name="description" content="{{ $meta['description'] }}">
     <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="{{ $canonicalUrl }}">
-    <link rel="alternate" hreflang="hu" href="{{ $pageName === 'home' ? $homeHuUrl : $skillsHuUrl }}">
-    <link rel="alternate" hreflang="en" href="{{ $pageName === 'home' ? $homeEnUrl : $skillsEnUrl }}">
-    <link rel="alternate" hreflang="x-default" href="{{ $pageName === 'home' ? $homeHuUrl : $skillsHuUrl }}">
+    <link rel="alternate" hreflang="hu" href="{{ $pageName === 'home' ? $homeHuUrl : ($pageName === 'skills' ? $skillsHuUrl : $statisticsHuUrl) }}">
+    <link rel="alternate" hreflang="en" href="{{ $pageName === 'home' ? $homeEnUrl : ($pageName === 'skills' ? $skillsEnUrl : $statisticsEnUrl) }}">
+    <link rel="alternate" hreflang="x-default" href="{{ $pageName === 'home' ? $homeHuUrl : ($pageName === 'skills' ? $skillsHuUrl : $statisticsHuUrl) }}">
 
     <meta property="og:title" content="{{ $meta['title'] }}">
     <meta property="og:description" content="{{ $meta['description'] }}">
@@ -39,8 +39,8 @@
     <canvas id="matrix"></canvas>
 
     <div class="language-switch">
-        <a href="{{ $pageName === 'home' ? $homeHuUrl : $skillsHuUrl }}" class="{{ $lang === 'hu' ? 'active' : '' }}">HUN</a> |
-        <a href="{{ $pageName === 'home' ? $homeEnUrl : $skillsEnUrl }}" class="{{ $lang === 'en' ? 'active' : '' }}">ENG</a>
+        <a href="{{ $pageName === 'home' ? $homeHuUrl : ($pageName === 'skills' ? $skillsHuUrl : $statisticsHuUrl) }}" class="{{ $lang === 'hu' ? 'active' : '' }}">HUN</a> |
+        <a href="{{ $pageName === 'home' ? $homeEnUrl : ($pageName === 'skills' ? $skillsEnUrl : $statisticsEnUrl) }}" class="{{ $lang === 'en' ? 'active' : '' }}">ENG</a>
     </div>
 
     <div class="nav-container">
@@ -50,6 +50,7 @@
             <a href="{{ $links['services'] }}">{{ $nav['services'] }}</a>
             <a href="{{ $links['projects'] }}">{{ $nav['projects'] }}</a>
             <a href="{{ $skillsUrl }}" class="{{ $pageName === 'skills' ? 'active' : '' }}">{{ $nav['skills'] }}</a>
+            <a href="{{ $statisticsUrl }}" class="{{ $pageName === 'statistics' ? 'active' : '' }}">{{ $nav['statistics'] }}</a>
             <a href="{{ $links['contact'] }}">{{ $nav['contact'] }}</a>
         </nav>
     </div>
