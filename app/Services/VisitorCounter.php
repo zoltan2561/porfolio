@@ -4,6 +4,7 @@ namespace App\Services;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 
 class VisitorCounter
 {
@@ -13,91 +14,95 @@ class VisitorCounter
 
     public function track(Request $request): void
     {
-        if ($this->isBot($request)) {
-            return;
+        try {
+            if ($this->isBot($request)) {
+                return;
+            }
+
+            $now = time();
+            $today = date('Y-m-d');
+            $ip = $this->clientIp($request);
+            $deviceType = $this->detectDevice($request);
+            $path = trim($request->path(), '/');
+            $path = $path === '' ? '/' : '/'.$path;
+
+            $baseDir = storage_path('app/stats');
+            $ipLogFile = $baseDir.DIRECTORY_SEPARATOR.'ip_log.json';
+            $counterFile = $baseDir.DIRECTORY_SEPARATOR.'counter_daily.json';
+            $recentVisitsFile = $baseDir.DIRECTORY_SEPARATOR.'recent_visits.json';
+            $geoCacheFile = $baseDir.DIRECTORY_SEPARATOR.'geo_cache.json';
+
+            $this->ensureDirectory($baseDir);
+
+            $log = $this->readJsonFile($ipLogFile);
+
+            $log = array_filter($log, function ($entry) use ($now) {
+                $timestamp = is_array($entry) ? ($entry['ts'] ?? 0) : (int) $entry;
+
+                return ($now - (int) $timestamp) < self::UNIQUE_WINDOW_SECONDS;
+            });
+
+            $counts = $this->readJsonFile($counterFile);
+
+            if (! isset($counts[$today])) {
+                $counts[$today] = $this->emptyDailyCounts();
+            }
+
+            $counts[$today]['pageviews']++;
+            $counts[$today]['pages'][$path] = (int) ($counts[$today]['pages'][$path] ?? 0) + 1;
+
+            if (isset($log[$ip])) {
+                $this->writeJsonFile($counterFile, $counts);
+                return;
+            }
+
+            $location = $this->resolveLocation($request, $ip, $geoCacheFile);
+
+            $log[$ip] = [
+                'ts' => $now,
+                'date' => $today,
+                'device' => $deviceType,
+                'ip' => $ip,
+                'country' => $location['country'],
+                'country_code' => $location['country_code'],
+                'city' => $location['city'],
+                'path' => $path,
+                'ua' => $request->userAgent() ?? '',
+            ];
+
+            $this->writeJsonFile($ipLogFile, $log);
+
+            $counts[$today]['unique']++;
+
+            if (isset($counts[$today][$deviceType])) {
+                $counts[$today][$deviceType]++;
+            }
+
+            $countryKey = $location['country'] !== '' ? $location['country'] : 'Ismeretlen';
+            $counts[$today]['countries'][$countryKey] = (int) ($counts[$today]['countries'][$countryKey] ?? 0) + 1;
+
+            $this->writeJsonFile($counterFile, $counts);
+
+            $recentVisits = $this->readJsonFile($recentVisitsFile);
+            $recentVisits[] = [
+                'ts' => $now,
+                'date' => $today,
+                'time' => date('H:i', $now),
+                'ip' => $ip,
+                'device' => $deviceType,
+                'path' => $path,
+                'country' => $location['country'],
+                'country_code' => $location['country_code'],
+                'city' => $location['city'],
+            ];
+            $recentVisits = array_slice($recentVisits, -self::RECENT_VISITS_LIMIT);
+
+            $this->writeJsonFile($recentVisitsFile, array_values($recentVisits));
+        } catch (\Throwable $exception) {
+            Log::warning('Visitor tracking failed but the request was allowed to continue.', [
+                'message' => $exception->getMessage(),
+            ]);
         }
-
-        $now = time();
-        $today = date('Y-m-d');
-        $ip = $this->clientIp($request);
-        $deviceType = $this->detectDevice($request);
-        $path = trim($request->path(), '/');
-        $path = $path === '' ? '/' : '/'.$path;
-
-        $baseDir = storage_path('app/stats');
-        $ipLogFile = $baseDir.DIRECTORY_SEPARATOR.'ip_log.json';
-        $counterFile = $baseDir.DIRECTORY_SEPARATOR.'counter_daily.json';
-        $recentVisitsFile = $baseDir.DIRECTORY_SEPARATOR.'recent_visits.json';
-        $geoCacheFile = $baseDir.DIRECTORY_SEPARATOR.'geo_cache.json';
-
-        if (! is_dir($baseDir)) {
-            mkdir($baseDir, 0775, true);
-        }
-
-        $log = $this->readJsonFile($ipLogFile);
-
-        $log = array_filter($log, function ($entry) use ($now) {
-            $timestamp = is_array($entry) ? ($entry['ts'] ?? 0) : (int) $entry;
-
-            return ($now - (int) $timestamp) < self::UNIQUE_WINDOW_SECONDS;
-        });
-
-        $counts = $this->readJsonFile($counterFile);
-
-        if (! isset($counts[$today])) {
-            $counts[$today] = $this->emptyDailyCounts();
-        }
-
-        $counts[$today]['pageviews']++;
-        $counts[$today]['pages'][$path] = (int) ($counts[$today]['pages'][$path] ?? 0) + 1;
-
-        if (isset($log[$ip])) {
-            file_put_contents($counterFile, json_encode($counts, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES), LOCK_EX);
-            return;
-        }
-
-        $location = $this->resolveLocation($request, $ip, $geoCacheFile);
-
-        $log[$ip] = [
-            'ts' => $now,
-            'date' => $today,
-            'device' => $deviceType,
-            'ip' => $ip,
-            'country' => $location['country'],
-            'country_code' => $location['country_code'],
-            'city' => $location['city'],
-            'path' => $path,
-            'ua' => $request->userAgent() ?? '',
-        ];
-
-        file_put_contents($ipLogFile, json_encode($log, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES), LOCK_EX);
-
-        $counts[$today]['unique']++;
-
-        if (isset($counts[$today][$deviceType])) {
-            $counts[$today][$deviceType]++;
-        }
-
-        $countryKey = $location['country'] !== '' ? $location['country'] : 'Ismeretlen';
-        $counts[$today]['countries'][$countryKey] = (int) ($counts[$today]['countries'][$countryKey] ?? 0) + 1;
-
-        file_put_contents($counterFile, json_encode($counts, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES), LOCK_EX);
-
-        $recentVisits = $this->readJsonFile($recentVisitsFile);
-        $recentVisits[] = [
-            'ts' => $now,
-            'date' => $today,
-            'time' => date('H:i', $now),
-            'ip' => $ip,
-            'device' => $deviceType,
-            'path' => $path,
-            'country' => $location['country'],
-            'country_code' => $location['country_code'],
-            'city' => $location['city'],
-        ];
-        $recentVisits = array_slice($recentVisits, -self::RECENT_VISITS_LIMIT);
-
-        file_put_contents($recentVisitsFile, json_encode(array_values($recentVisits), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES), LOCK_EX);
     }
 
     public function statistics(int $days = self::DEFAULT_DAYS): array
@@ -213,6 +218,18 @@ class VisitorCounter
         $decoded = json_decode((string) file_get_contents($path), true);
 
         return is_array($decoded) ? $decoded : [];
+    }
+
+    private function writeJsonFile(string $path, array $data): void
+    {
+        file_put_contents($path, json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES), LOCK_EX);
+    }
+
+    private function ensureDirectory(string $path): void
+    {
+        if (! is_dir($path)) {
+            mkdir($path, 0775, true);
+        }
     }
 
     private function resolveLocation(Request $request, string $ip, string $geoCacheFile): array
