@@ -131,6 +131,9 @@ return [
                             'text' => 'Éttermi weboldal online rendelési és fizetési folyamattal, gyorsabb vásárlói útra hangolva.',
                             'url' => 'https://gyroscity.eu',
                             'link' => 'Weboldal megtekintése',
+                            'image' => 'projects/gyroscity.png',
+                            'image_alt' => 'GyrosCity weboldal előnézeti képe',
+                            'image_layout' => 'phone',
                         ],
                         [
                             'tag' => 'Foglalás + brand',
@@ -138,6 +141,8 @@ return [
                             'text' => 'Barber oldal online időpontfoglalással, erős vizuális világgal és egyszerűbb ügyfélúttal.',
                             'url' => 'https://zcutzbarber.com',
                             'link' => 'Weboldal megtekintése',
+                            'image' => 'projects/zcutzbarber.png',
+                            'image_alt' => 'ZCutzBarber weboldal előnézeti képe',
                         ],
                         [
                             'tag' => 'Hardver + stabilitás',
@@ -300,6 +305,9 @@ return [
                             'text' => 'Restaurant website with online ordering and payment flow built for faster customer action.',
                             'url' => 'https://gyroscity.eu',
                             'link' => 'View Website',
+                            'image' => 'projects/gyroscity.png',
+                            'image_alt' => 'GyrosCity website preview image',
+                            'image_layout' => 'phone',
                         ],
                         [
                             'tag' => 'Booking + branding',
@@ -307,6 +315,8 @@ return [
                             'text' => 'Barbershop site with online booking, strong visuals, and a smoother client journey.',
                             'url' => 'https://zcutzbarber.com',
                             'link' => 'View Website',
+                            'image' => 'projects/zcutzbarber.png',
+                            'image_alt' => 'ZCutzBarber website preview image',
                         ],
                         [
                             'tag' => 'Hardware + stability',

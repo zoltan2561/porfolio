@@ -429,6 +429,27 @@ section h2 {
   align-items: flex-start;
   gap: 0.8rem;
   text-align: left;
+  overflow: hidden;
+}
+
+.project-image {
+  width: calc(100% + 2.5rem);
+  aspect-ratio: 16 / 9;
+  height: auto;
+  margin: -1.25rem -1.25rem 0;
+  object-fit: cover;
+  object-position: center top;
+  border-bottom: 1px solid rgba(0, 255, 204, 0.16);
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.project-image--phone {
+  aspect-ratio: 9 / 13;
+  object-fit: contain;
+  object-position: center top;
+  background:
+    radial-gradient(circle at 50% 12%, rgba(0, 255, 204, 0.12), transparent 36%),
+    rgba(0, 0, 0, 0.5);
 }
 
 .service h3,
