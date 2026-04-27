@@ -50,7 +50,6 @@
             <a href="{{ $links['services'] }}">{{ $nav['services'] }}</a>
             <a href="{{ $links['projects'] }}">{{ $nav['projects'] }}</a>
             <a href="{{ $skillsUrl }}" class="{{ $pageName === 'skills' ? 'active' : '' }}">{{ $nav['skills'] }}</a>
-            <a href="{{ $statisticsUrl }}" class="{{ $pageName === 'statistics' ? 'active' : '' }}">{{ $nav['statistics'] }}</a>
             <a href="{{ $links['contact'] }}">{{ $nav['contact'] }}</a>
         </nav>
     </div>
