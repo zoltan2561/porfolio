@@ -69,9 +69,6 @@
             <div class="projects" data-projects-track>
                 @foreach ($page['projects']['items'] as $project)
                     <article class="project">
-                        @if (! empty($project['image']))
-                            <img class="project-image {{ ($project['image_layout'] ?? null) === 'phone' ? 'project-image--phone' : '' }}" src="{{ asset($project['image']) }}" alt="{{ $project['image_alt'] ?? $project['title'] }}" loading="lazy" width="640" height="360">
-                        @endif
                         <span class="project-tag">{{ $project['tag'] }}</span>
                         <h3>{{ $project['title'] }}</h3>
                         <p>{{ $project['text'] }}</p>

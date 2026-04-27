@@ -432,28 +432,6 @@ section h2 {
   overflow: hidden;
 }
 
-.project-image {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  height: auto;
-  margin: 0;
-  object-fit: cover;
-  object-position: center top;
-  border-radius: 10px;
-  display: block;
-  border-bottom: 1px solid rgba(0, 255, 204, 0.16);
-  background: rgba(0, 0, 0, 0.35);
-}
-
-.project-image--phone {
-  aspect-ratio: 9 / 13;
-  object-fit: contain;
-  object-position: center top;
-  background:
-    radial-gradient(circle at 50% 12%, rgba(0, 255, 204, 0.12), transparent 36%),
-    rgba(0, 0, 0, 0.5);
-}
-
 .service h3,
 .project h3 {
   color: #76ffd6;
