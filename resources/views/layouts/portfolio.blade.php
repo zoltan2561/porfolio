@@ -18,6 +18,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ $currentUrl }}">
     <meta property="og:locale" content="{{ $lang === 'hu' ? 'hu_HU' : 'en_US' }}">
+    <meta property="og:logo" content="{{ asset('images/logo.png') }}">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ $meta['title'] }}">
